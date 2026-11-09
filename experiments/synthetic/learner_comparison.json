@@ -1,0 +1,17 @@
+{
+  "study": "Learner comparison at L = 12",
+  "description": "Ten runs each of PPO, DQN and double DQN learn when to order on the four source laws with preserved preparation, with the same inputs, rewards and budget and one fixed recipe per learner (maintenance_arena.learning.learners). The three runs with the same index share their training lives. The final policies, the naive projection rule and Rule (the threshold of the source study) are replayed on 2,000 new test lives, and every checkpoint on 800 diagnostic lives. The bank seeds use the run index 0 to 9 as role.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "seed_namespace": 2610263503,
+  "seed_entropy": ["namespace", "purpose", "role"],
+  "roles": [26102601, 26102602, 26102603, 26102604, 26102605, 26102606, 26102607, 26102608, 26102609, 26102610],
+  "algorithms": {"PPO": "PPO", "DQN": "DQN", "DDQN": "Double DQN"},
+  "training": {
+    "steps": 204800,
+    "milestones": [51200, 102400, 204800],
+    "bank": {"split": "source_train", "purpose": 11, "pairs": 10784, "per_role": true}
+  },
+  "diagnostic_bank": {"split": "development", "purpose": 31, "lives": 800},
+  "test_bank": {"split": "final_evaluation", "purpose": 41, "lives": 2000},
+  "rules": {"Naive projection rule": 13, "Rule": 15}
+}

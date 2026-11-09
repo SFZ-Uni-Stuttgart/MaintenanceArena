@@ -1,0 +1,154 @@
+{
+  "arrays": {
+    "action_filter": {
+      "dtype": "|i1",
+      "sha256": "e34e27b61c04297642de4fdbfd6b48493054391d3dd767430b7f02ca195d7cce",
+      "shape": [
+        1440,
+        2,
+        3
+      ]
+    },
+    "duration": {
+      "dtype": "<f8",
+      "sha256": "5a55e23fc80b6c81a95557d831d4d90b346169afc36be5e6c6ced9ba8ad98ac6",
+      "shape": [
+        1440,
+        2,
+        3
+      ]
+    },
+    "immediate_metrics": {
+      "dtype": "<f8",
+      "sha256": "f0c45738cdfcd9e0a313beb3b9c71dbd1afa7abbe3427e146703fa517d4b008f",
+      "shape": [
+        1440,
+        2,
+        3,
+        18
+      ]
+    },
+    "next_damage": {
+      "dtype": "<i4",
+      "sha256": "3c04ca97591db668a1b493777b308e35c240cf740b3fac44a669a78f8fcece0a",
+      "shape": [
+        1440,
+        2,
+        3
+      ]
+    },
+    "observations": {
+      "dtype": "<f4",
+      "sha256": "14838ee9974d28e5c68d25c871e6b88db40b3b1cf7043fcadd7101f6db7931a0",
+      "shape": [
+        1440,
+        2,
+        4
+      ]
+    },
+    "renews": {
+      "dtype": "|b1",
+      "sha256": "dc11e373479431b8418c621c90b2daa748d1d433c1e9694e1ace4380287e1f5a",
+      "shape": [
+        1440,
+        2,
+        3
+      ]
+    },
+    "reward_raw": {
+      "dtype": "<f8",
+      "sha256": "5f3fe3fcdf4b767bd8797d387fdeec7b2f1440a3da6b97c929ddc890892649d5",
+      "shape": [
+        1440,
+        2,
+        3
+      ]
+    }
+  },
+  "filter_audit": {
+    "checks": {
+      "admissible_proposals_preserved": true,
+      "all_filtered_macros_inside_safe_set_failure_free": true,
+      "all_filtered_successors_remain_safe_or_renew": true,
+      "new_state_in_safe_set": true,
+      "nonrenewal_damage_strictly_increases": true,
+      "operating_actions_do_not_renew_inside_safe_set": true,
+      "outside_safe_set_unchanged": true,
+      "renewal_outside_safe_set_fails": true,
+      "replace_always_renews": true,
+      "replace_safe_inside_safe_set": true
+    },
+    "corrected_state_action_proposals": 38,
+    "derivation": "mobilization_epochs * derate_damage + 1",
+    "guarantee": "From any q >= boundary, every filtered proposal sequence stays preventively recoverable and every renewal is failure-free under the exact model.",
+    "limits": "No rescue guarantee from q < boundary; no model uncertainty, physical validation, learned safety or cost-optimal correction claim.",
+    "outside_safe_state_count": 168,
+    "safe_remaining_damage_minimum": 85,
+    "safe_state_count": 2712,
+    "state_count": 2880
+  },
+  "metric_names": [
+    "reward_cents",
+    "duration",
+    "revenue_low_cents",
+    "revenue_high_cents",
+    "revenue_mobilization_cents",
+    "productive_epochs",
+    "planned_renewals",
+    "corrective_renewals",
+    "failures",
+    "downtime_rows",
+    "replacement_count",
+    "successful_normal_decisions",
+    "successful_derate_decisions",
+    "normal_selections",
+    "derate_selections",
+    "replace_selections",
+    "all_decisions",
+    "discarded_damage"
+  ],
+  "model_spec": {
+    "bellman_tolerance_raw": 1e-08,
+    "damage_capacity": 1440,
+    "derate_damage": 7,
+    "derate_revenue_cents": 24225,
+    "downtime_cost_cents": 2500,
+    "failure_cost_cents": 700000,
+    "independent_relative_tolerance": 1e-09,
+    "initial_average_reward_raw": 0.0,
+    "load_cycles_per_reference_increment": 37625,
+    "max_dp_iterations": 200,
+    "mobilization_epochs": 12,
+    "normal_damage": 12,
+    "normal_high_revenue_cents": 25500,
+    "normal_low_revenue_cents": 24225,
+    "post_event_downtime_rows": 6,
+    "regenerative_tolerance_raw": 1e-08,
+    "replacement_cost_cents": 52000,
+    "tie_tolerance_raw": 1e-10,
+    "transition_probability_tolerance": 1e-15
+  },
+  "observation_count": 2880,
+  "scalar_audits": {
+    "raw_accounting_residual_cents_max": 0.0,
+    "transition_probability_residual_max": 0.0
+  },
+  "schema_version": "maintenance_arena_gearbox_transition_identity_v1",
+  "serialization": "C-contiguous canonical little-endian bytes; bool and int8 are byte-order independent",
+  "sources": [
+    {
+      "source_role": "independent reference implementation of the exact gearbox model",
+      "source_sha256": "2543d3fb9a3e3863eae9902824bfbf518488e0d2911a0e570abc4acf89939e93"
+    },
+    {
+      "source_role": "independent reference implementation of the gearbox execution filter",
+      "source_sha256": "c59a8400b0ec129be24b5f37470be0873a4c96a130bf86c716ad5e32fd485e2e"
+    }
+  ],
+  "transition_axes": [
+    "damage:0..1439",
+    "opportunity:0..1",
+    "action:NORMAL,DERATE,REPLACE"
+  ],
+  "transition_count": 8640
+}

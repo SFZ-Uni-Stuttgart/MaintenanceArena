@@ -1,0 +1,83 @@
+{
+  "seeds": {
+    "femto_cross_validation": [
+      [2026101600, 2026101601, 2026101602, 2026101603, 2026101604],
+      [2026101700, 2026101701, 2026101702, 2026101703, 2026101704],
+      [2026101800, 2026101801, 2026101802, 2026101803, 2026101804],
+      [2026101900, 2026101901, 2026101902, 2026101903, 2026101904],
+      [2026102000, 2026102001, 2026102002, 2026102003, 2026102004]
+    ],
+    "xjtu_sy_transfer": [2026101800, 2026101801, 2026101802, 2026101803, 2026101804]
+  },
+  "experiments": {
+    "femto_cross_validation": {
+      "description": "Held-out FEMTO bearings in five outer folds; forecasters, rules and policies see training bearings only.",
+      "evaluations": ["femto_cross_validation"],
+      "designs": {
+        "Full": {"kind": "ppo", "inputs": "full", "calendar_steps": 409600},
+        "No age": {"kind": "ppo", "inputs": "no_age", "calendar_steps": 409600},
+        "Condition only": {"kind": "ppo", "inputs": "condition_only", "calendar_steps": 819200},
+        "Indicator Rule": {"kind": "indicator_rule"},
+        "Reactive": {"kind": "reactive"}
+      }
+    },
+    "transfer": {
+      "description": "Forecasters, policies and the indicator Rule fitted on all 17 FEMTO bearings and applied unchanged to XJTU-SY.",
+      "evaluations": ["xjtu_sy_transfer"],
+      "designs": {
+        "Full": {"kind": "ppo", "inputs": "full", "calendar_steps": 409600},
+        "No age": {"kind": "ppo", "inputs": "no_age", "calendar_steps": 409600},
+        "Condition only": {"kind": "ppo", "inputs": "condition_only", "calendar_steps": 819200},
+        "Indicator Rule": {"kind": "indicator_rule"},
+        "Reactive": {"kind": "reactive"}
+      }
+    },
+    "age_designs": {
+      "description": "Operating age removed from only the policy or only the forecaster, on held-out FEMTO and after transfer.",
+      "evaluations": ["femto_cross_validation", "xjtu_sy_transfer"],
+      "designs": {
+        "No policy age": {"kind": "ppo", "inputs": "no_policy_age", "calendar_steps": 409600},
+        "No forecaster age": {"kind": "ppo", "inputs": "no_forecaster_age", "calendar_steps": 409600}
+      }
+    },
+    "forecast_rules": {
+      "description": "One cutoff on the forecast input of Full or No age, fitted for pooled training profit, and the naive cutoff of 12 minutes.",
+      "evaluations": ["femto_cross_validation", "xjtu_sy_transfer"],
+      "designs": {
+        "Forecast rule: Full": {"kind": "forecast_rule", "inputs": "full"},
+        "Forecast rule: No age": {"kind": "forecast_rule", "inputs": "no_age"},
+        "Naive forecast rule: Full": {"kind": "naive_forecast_rule", "inputs": "full"},
+        "Naive forecast rule: No age": {"kind": "naive_forecast_rule", "inputs": "no_age"}
+      }
+    },
+    "candidate_selection": {
+      "description": "Six held-out FEMTO candidates, three input designs at two training budgets, ranked by pooled held-out calendar profit after averaging the seeds of every bearing.",
+      "evaluations": ["femto_cross_validation"],
+      "designs": {
+        "Full (409600 steps)": {"kind": "ppo", "inputs": "full", "calendar_steps": 409600},
+        "Full (819200 steps)": {"kind": "ppo", "inputs": "full", "calendar_steps": 819200},
+        "No age (409600 steps)": {"kind": "ppo", "inputs": "no_age", "calendar_steps": 409600},
+        "No age (819200 steps)": {"kind": "ppo", "inputs": "no_age", "calendar_steps": 819200},
+        "Condition only (409600 steps)": {"kind": "ppo", "inputs": "condition_only", "calendar_steps": 409600},
+        "Condition only (819200 steps)": {"kind": "ppo", "inputs": "condition_only", "calendar_steps": 819200}
+      },
+      "selection": "Maximum pooled held-out profit, total seed-averaged cash over total seed-averaged calendar minutes; exact ties prefer fewer failures, then the shorter budget, then fewer policy inputs."
+    },
+    "risk_classifier": {
+      "description": "A gradient-boosted classifier on the inputs of Full or No age marks every minute at or after the last safe order and orders at the first minute whose score reaches a threshold. The threshold is chosen by pooled training profit on leave-one-bearing-out scores of the training bearings, after which the classifier is refitted on all of them.",
+      "evaluations": ["femto_cross_validation", "xjtu_sy_transfer"],
+      "designs": {
+        "Risk classifier: Full": {"kind": "risk_classifier", "inputs": "full"},
+        "Risk classifier: No age": {"kind": "risk_classifier", "inputs": "no_age"}
+      }
+    },
+    "rule_search": {
+      "description": "Sixteen rule families: the five indicator families, the same with no order before minute 10, and level, peak and forecast conditions combined with a minimum age or an age limit. Each family is refitted on the training bearings; a family is chosen by inner cross-validation, and, in hindsight, by pooled held-out profit.",
+      "evaluations": ["femto_cross_validation"],
+      "designs": {
+        "Cross-validated rule": {"kind": "rule_search", "family_prefix": "Rule family: ",
+                                 "held_out_choice": "Rule family by held-out profit"}
+      }
+    }
+  }
+}

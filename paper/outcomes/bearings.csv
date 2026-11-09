@@ -1,0 +1,833 @@
+method,group,fold,run,unit,last_productive_step,order_step
+PPO: Full,FEMTO,4,0,Bearing1_1,468,220
+PPO: Full,FEMTO,4,0,Bearing1_2,146,12
+PPO: Full,FEMTO,3,0,Bearing1_3,396,250
+PPO: Full,FEMTO,3,0,Bearing1_4,238,182
+PPO: Full,FEMTO,1,0,Bearing1_5,411,332
+PPO: Full,FEMTO,1,0,Bearing1_6,408,370
+PPO: Full,FEMTO,0,0,Bearing1_7,377,369
+PPO: Full,FEMTO,0,0,Bearing2_1,152,28
+PPO: Full,FEMTO,2,0,Bearing2_2,133,43
+PPO: Full,FEMTO,1,0,Bearing2_3,326,57
+PPO: Full,FEMTO,2,0,Bearing2_4,126,125
+PPO: Full,FEMTO,0,0,Bearing2_5,386,252
+PPO: Full,FEMTO,4,0,Bearing2_6,117,116
+PPO: Full,FEMTO,3,0,Bearing2_7,39,28
+PPO: Full,FEMTO,0,0,Bearing3_1,86,84
+PPO: Full,FEMTO,1,0,Bearing3_2,273,
+PPO: Full,FEMTO,2,0,Bearing3_3,73,57
+PPO: Full,FEMTO,4,1,Bearing1_1,468,133
+PPO: Full,FEMTO,4,1,Bearing1_2,146,12
+PPO: Full,FEMTO,3,1,Bearing1_3,396,260
+PPO: Full,FEMTO,3,1,Bearing1_4,238,182
+PPO: Full,FEMTO,1,1,Bearing1_5,411,307
+PPO: Full,FEMTO,1,1,Bearing1_6,408,274
+PPO: Full,FEMTO,0,1,Bearing1_7,377,358
+PPO: Full,FEMTO,0,1,Bearing2_1,152,26
+PPO: Full,FEMTO,2,1,Bearing2_2,133,36
+PPO: Full,FEMTO,1,1,Bearing2_3,326,45
+PPO: Full,FEMTO,2,1,Bearing2_4,126,125
+PPO: Full,FEMTO,0,1,Bearing2_5,386,20
+PPO: Full,FEMTO,4,1,Bearing2_6,117,115
+PPO: Full,FEMTO,3,1,Bearing2_7,39,31
+PPO: Full,FEMTO,0,1,Bearing3_1,86,83
+PPO: Full,FEMTO,1,1,Bearing3_2,273,240
+PPO: Full,FEMTO,2,1,Bearing3_3,73,56
+PPO: Full,FEMTO,4,2,Bearing1_1,468,135
+PPO: Full,FEMTO,4,2,Bearing1_2,146,12
+PPO: Full,FEMTO,3,2,Bearing1_3,396,260
+PPO: Full,FEMTO,3,2,Bearing1_4,238,182
+PPO: Full,FEMTO,1,2,Bearing1_5,411,333
+PPO: Full,FEMTO,1,2,Bearing1_6,408,365
+PPO: Full,FEMTO,0,2,Bearing1_7,377,304
+PPO: Full,FEMTO,0,2,Bearing2_1,152,26
+PPO: Full,FEMTO,2,2,Bearing2_2,133,71
+PPO: Full,FEMTO,1,2,Bearing2_3,326,45
+PPO: Full,FEMTO,2,2,Bearing2_4,126,125
+PPO: Full,FEMTO,0,2,Bearing2_5,386,239
+PPO: Full,FEMTO,4,2,Bearing2_6,117,115
+PPO: Full,FEMTO,3,2,Bearing2_7,39,28
+PPO: Full,FEMTO,0,2,Bearing3_1,86,83
+PPO: Full,FEMTO,1,2,Bearing3_2,273,271
+PPO: Full,FEMTO,2,2,Bearing3_3,73,60
+PPO: Full,FEMTO,4,3,Bearing1_1,468,220
+PPO: Full,FEMTO,4,3,Bearing1_2,146,12
+PPO: Full,FEMTO,3,3,Bearing1_3,396,260
+PPO: Full,FEMTO,3,3,Bearing1_4,238,182
+PPO: Full,FEMTO,1,3,Bearing1_5,411,307
+PPO: Full,FEMTO,1,3,Bearing1_6,408,274
+PPO: Full,FEMTO,0,3,Bearing1_7,377,370
+PPO: Full,FEMTO,0,3,Bearing2_1,152,26
+PPO: Full,FEMTO,2,3,Bearing2_2,133,43
+PPO: Full,FEMTO,1,3,Bearing2_3,326,46
+PPO: Full,FEMTO,2,3,Bearing2_4,126,125
+PPO: Full,FEMTO,0,3,Bearing2_5,386,39
+PPO: Full,FEMTO,4,3,Bearing2_6,117,115
+PPO: Full,FEMTO,3,3,Bearing2_7,39,24
+PPO: Full,FEMTO,0,3,Bearing3_1,86,83
+PPO: Full,FEMTO,1,3,Bearing3_2,273,241
+PPO: Full,FEMTO,2,3,Bearing3_3,73,57
+PPO: Full,FEMTO,4,4,Bearing1_1,468,133
+PPO: Full,FEMTO,4,4,Bearing1_2,146,12
+PPO: Full,FEMTO,3,4,Bearing1_3,396,260
+PPO: Full,FEMTO,3,4,Bearing1_4,238,182
+PPO: Full,FEMTO,1,4,Bearing1_5,411,243
+PPO: Full,FEMTO,1,4,Bearing1_6,408,272
+PPO: Full,FEMTO,0,4,Bearing1_7,377,357
+PPO: Full,FEMTO,0,4,Bearing2_1,152,32
+PPO: Full,FEMTO,2,4,Bearing2_2,133,71
+PPO: Full,FEMTO,1,4,Bearing2_3,326,45
+PPO: Full,FEMTO,2,4,Bearing2_4,126,125
+PPO: Full,FEMTO,0,4,Bearing2_5,386,259
+PPO: Full,FEMTO,4,4,Bearing2_6,117,115
+PPO: Full,FEMTO,3,4,Bearing2_7,39,28
+PPO: Full,FEMTO,0,4,Bearing3_1,86,85
+PPO: Full,FEMTO,1,4,Bearing3_2,273,25
+PPO: Full,FEMTO,2,4,Bearing3_3,73,59
+PPO: Full,XJTU-SY,,0,Bearing1_1,123,77
+PPO: Full,XJTU-SY,,0,Bearing1_2,161,48
+PPO: Full,XJTU-SY,,0,Bearing1_3,158,96
+PPO: Full,XJTU-SY,,0,Bearing1_4,122,122
+PPO: Full,XJTU-SY,,0,Bearing1_5,52,37
+PPO: Full,XJTU-SY,,0,Bearing2_1,491,361
+PPO: Full,XJTU-SY,,0,Bearing2_2,161,51
+PPO: Full,XJTU-SY,,0,Bearing2_3,533,171
+PPO: Full,XJTU-SY,,0,Bearing2_4,42,32
+PPO: Full,XJTU-SY,,0,Bearing2_5,339,172
+PPO: Full,XJTU-SY,,0,Bearing3_1,2538,355
+PPO: Full,XJTU-SY,,0,Bearing3_2,2496,327
+PPO: Full,XJTU-SY,,0,Bearing3_3,371,342
+PPO: Full,XJTU-SY,,0,Bearing3_4,1515,346
+PPO: Full,XJTU-SY,,0,Bearing3_5,114,9
+PPO: Full,XJTU-SY,,1,Bearing1_1,123,79
+PPO: Full,XJTU-SY,,1,Bearing1_2,161,62
+PPO: Full,XJTU-SY,,1,Bearing1_3,158,110
+PPO: Full,XJTU-SY,,1,Bearing1_4,122,110
+PPO: Full,XJTU-SY,,1,Bearing1_5,52,37
+PPO: Full,XJTU-SY,,1,Bearing2_1,491,109
+PPO: Full,XJTU-SY,,1,Bearing2_2,161,63
+PPO: Full,XJTU-SY,,1,Bearing2_3,533,97
+PPO: Full,XJTU-SY,,1,Bearing2_4,42,33
+PPO: Full,XJTU-SY,,1,Bearing2_5,339,109
+PPO: Full,XJTU-SY,,1,Bearing3_1,2538,105
+PPO: Full,XJTU-SY,,1,Bearing3_2,2496,110
+PPO: Full,XJTU-SY,,1,Bearing3_3,371,106
+PPO: Full,XJTU-SY,,1,Bearing3_4,1515,103
+PPO: Full,XJTU-SY,,1,Bearing3_5,114,100
+PPO: Full,XJTU-SY,,2,Bearing1_1,123,44
+PPO: Full,XJTU-SY,,2,Bearing1_2,161,37
+PPO: Full,XJTU-SY,,2,Bearing1_3,158,71
+PPO: Full,XJTU-SY,,2,Bearing1_4,122,81
+PPO: Full,XJTU-SY,,2,Bearing1_5,52,37
+PPO: Full,XJTU-SY,,2,Bearing2_1,491,106
+PPO: Full,XJTU-SY,,2,Bearing2_2,161,58
+PPO: Full,XJTU-SY,,2,Bearing2_3,533,77
+PPO: Full,XJTU-SY,,2,Bearing2_4,42,32
+PPO: Full,XJTU-SY,,2,Bearing2_5,339,121
+PPO: Full,XJTU-SY,,2,Bearing3_1,2538,82
+PPO: Full,XJTU-SY,,2,Bearing3_2,2496,61
+PPO: Full,XJTU-SY,,2,Bearing3_3,371,85
+PPO: Full,XJTU-SY,,2,Bearing3_4,1515,67
+PPO: Full,XJTU-SY,,2,Bearing3_5,114,14
+PPO: Full,XJTU-SY,,3,Bearing1_1,123,79
+PPO: Full,XJTU-SY,,3,Bearing1_2,161,60
+PPO: Full,XJTU-SY,,3,Bearing1_3,158,108
+PPO: Full,XJTU-SY,,3,Bearing1_4,122,122
+PPO: Full,XJTU-SY,,3,Bearing1_5,52,42
+PPO: Full,XJTU-SY,,3,Bearing2_1,491,385
+PPO: Full,XJTU-SY,,3,Bearing2_2,161,59
+PPO: Full,XJTU-SY,,3,Bearing2_3,533,321
+PPO: Full,XJTU-SY,,3,Bearing2_4,42,34
+PPO: Full,XJTU-SY,,3,Bearing2_5,339,190
+PPO: Full,XJTU-SY,,3,Bearing3_1,2538,487
+PPO: Full,XJTU-SY,,3,Bearing3_2,2496,367
+PPO: Full,XJTU-SY,,3,Bearing3_3,371,344
+PPO: Full,XJTU-SY,,3,Bearing3_4,1515,474
+PPO: Full,XJTU-SY,,3,Bearing3_5,114,
+PPO: Full,XJTU-SY,,4,Bearing1_1,123,79
+PPO: Full,XJTU-SY,,4,Bearing1_2,161,60
+PPO: Full,XJTU-SY,,4,Bearing1_3,158,105
+PPO: Full,XJTU-SY,,4,Bearing1_4,122,122
+PPO: Full,XJTU-SY,,4,Bearing1_5,52,47
+PPO: Full,XJTU-SY,,4,Bearing2_1,491,455
+PPO: Full,XJTU-SY,,4,Bearing2_2,161,63
+PPO: Full,XJTU-SY,,4,Bearing2_3,533,325
+PPO: Full,XJTU-SY,,4,Bearing2_4,42,37
+PPO: Full,XJTU-SY,,4,Bearing2_5,339,193
+PPO: Full,XJTU-SY,,4,Bearing3_1,2538,530
+PPO: Full,XJTU-SY,,4,Bearing3_2,2496,402
+PPO: Full,XJTU-SY,,4,Bearing3_3,371,345
+PPO: Full,XJTU-SY,,4,Bearing3_4,1515,546
+PPO: Full,XJTU-SY,,4,Bearing3_5,114,21
+PPO: No policy age,FEMTO,4,0,Bearing1_1,468,221
+PPO: No policy age,FEMTO,4,0,Bearing1_2,146,25
+PPO: No policy age,FEMTO,3,0,Bearing1_3,396,47
+PPO: No policy age,FEMTO,3,0,Bearing1_4,238,181
+PPO: No policy age,FEMTO,1,0,Bearing1_5,411,332
+PPO: No policy age,FEMTO,1,0,Bearing1_6,408,404
+PPO: No policy age,FEMTO,0,0,Bearing1_7,377,370
+PPO: No policy age,FEMTO,0,0,Bearing2_1,152,27
+PPO: No policy age,FEMTO,2,0,Bearing2_2,133,131
+PPO: No policy age,FEMTO,1,0,Bearing2_3,326,
+PPO: No policy age,FEMTO,2,0,Bearing2_4,126,
+PPO: No policy age,FEMTO,0,0,Bearing2_5,386,295
+PPO: No policy age,FEMTO,4,0,Bearing2_6,117,116
+PPO: No policy age,FEMTO,3,0,Bearing2_7,39,20
+PPO: No policy age,FEMTO,0,0,Bearing3_1,86,83
+PPO: No policy age,FEMTO,1,0,Bearing3_2,273,
+PPO: No policy age,FEMTO,2,0,Bearing3_3,73,
+PPO: No policy age,FEMTO,4,1,Bearing1_1,468,222
+PPO: No policy age,FEMTO,4,1,Bearing1_2,146,24
+PPO: No policy age,FEMTO,3,1,Bearing1_3,396,383
+PPO: No policy age,FEMTO,3,1,Bearing1_4,238,183
+PPO: No policy age,FEMTO,1,1,Bearing1_5,411,327
+PPO: No policy age,FEMTO,1,1,Bearing1_6,408,309
+PPO: No policy age,FEMTO,0,1,Bearing1_7,377,368
+PPO: No policy age,FEMTO,0,1,Bearing2_1,152,25
+PPO: No policy age,FEMTO,2,1,Bearing2_2,133,
+PPO: No policy age,FEMTO,1,1,Bearing2_3,326,44
+PPO: No policy age,FEMTO,2,1,Bearing2_4,126,
+PPO: No policy age,FEMTO,0,1,Bearing2_5,386,20
+PPO: No policy age,FEMTO,4,1,Bearing2_6,117,116
+PPO: No policy age,FEMTO,3,1,Bearing2_7,39,
+PPO: No policy age,FEMTO,0,1,Bearing3_1,86,83
+PPO: No policy age,FEMTO,1,1,Bearing3_2,273,24
+PPO: No policy age,FEMTO,2,1,Bearing3_3,73,
+PPO: No policy age,FEMTO,4,2,Bearing1_1,468,221
+PPO: No policy age,FEMTO,4,2,Bearing1_2,146,21
+PPO: No policy age,FEMTO,3,2,Bearing1_3,396,272
+PPO: No policy age,FEMTO,3,2,Bearing1_4,238,182
+PPO: No policy age,FEMTO,1,2,Bearing1_5,411,345
+PPO: No policy age,FEMTO,1,2,Bearing1_6,408,404
+PPO: No policy age,FEMTO,0,2,Bearing1_7,377,369
+PPO: No policy age,FEMTO,0,2,Bearing2_1,152,26
+PPO: No policy age,FEMTO,2,2,Bearing2_2,133,76
+PPO: No policy age,FEMTO,1,2,Bearing2_3,326,46
+PPO: No policy age,FEMTO,2,2,Bearing2_4,126,126
+PPO: No policy age,FEMTO,0,2,Bearing2_5,386,42
+PPO: No policy age,FEMTO,4,2,Bearing2_6,117,116
+PPO: No policy age,FEMTO,3,2,Bearing2_7,39,31
+PPO: No policy age,FEMTO,0,2,Bearing3_1,86,83
+PPO: No policy age,FEMTO,1,2,Bearing3_2,273,270
+PPO: No policy age,FEMTO,2,2,Bearing3_3,73,73
+PPO: No policy age,FEMTO,4,3,Bearing1_1,468,69
+PPO: No policy age,FEMTO,4,3,Bearing1_2,146,7
+PPO: No policy age,FEMTO,3,3,Bearing1_3,396,
+PPO: No policy age,FEMTO,3,3,Bearing1_4,238,183
+PPO: No policy age,FEMTO,1,3,Bearing1_5,411,327
+PPO: No policy age,FEMTO,1,3,Bearing1_6,408,282
+PPO: No policy age,FEMTO,0,3,Bearing1_7,377,
+PPO: No policy age,FEMTO,0,3,Bearing2_1,152,
+PPO: No policy age,FEMTO,2,3,Bearing2_2,133,57
+PPO: No policy age,FEMTO,1,3,Bearing2_3,326,55
+PPO: No policy age,FEMTO,2,3,Bearing2_4,126,125
+PPO: No policy age,FEMTO,0,3,Bearing2_5,386,295
+PPO: No policy age,FEMTO,4,3,Bearing2_6,117,74
+PPO: No policy age,FEMTO,3,3,Bearing2_7,39,
+PPO: No policy age,FEMTO,0,3,Bearing3_1,86,
+PPO: No policy age,FEMTO,1,3,Bearing3_2,273,36
+PPO: No policy age,FEMTO,2,3,Bearing3_3,73,59
+PPO: No policy age,FEMTO,4,4,Bearing1_1,468,221
+PPO: No policy age,FEMTO,4,4,Bearing1_2,146,22
+PPO: No policy age,FEMTO,3,4,Bearing1_3,396,273
+PPO: No policy age,FEMTO,3,4,Bearing1_4,238,182
+PPO: No policy age,FEMTO,1,4,Bearing1_5,411,27
+PPO: No policy age,FEMTO,1,4,Bearing1_6,408,274
+PPO: No policy age,FEMTO,0,4,Bearing1_7,377,370
+PPO: No policy age,FEMTO,0,4,Bearing2_1,152,26
+PPO: No policy age,FEMTO,2,4,Bearing2_2,133,78
+PPO: No policy age,FEMTO,1,4,Bearing2_3,326,19
+PPO: No policy age,FEMTO,2,4,Bearing2_4,126,126
+PPO: No policy age,FEMTO,0,4,Bearing2_5,386,384
+PPO: No policy age,FEMTO,4,4,Bearing2_6,117,116
+PPO: No policy age,FEMTO,3,4,Bearing2_7,39,
+PPO: No policy age,FEMTO,0,4,Bearing3_1,86,83
+PPO: No policy age,FEMTO,1,4,Bearing3_2,273,24
+PPO: No policy age,FEMTO,2,4,Bearing3_3,73,73
+PPO: No policy age,XJTU-SY,,0,Bearing1_1,123,75
+PPO: No policy age,XJTU-SY,,0,Bearing1_2,161,45
+PPO: No policy age,XJTU-SY,,0,Bearing1_3,158,93
+PPO: No policy age,XJTU-SY,,0,Bearing1_4,122,122
+PPO: No policy age,XJTU-SY,,0,Bearing1_5,52,38
+PPO: No policy age,XJTU-SY,,0,Bearing2_1,491,455
+PPO: No policy age,XJTU-SY,,0,Bearing2_2,161,51
+PPO: No policy age,XJTU-SY,,0,Bearing2_3,533,170
+PPO: No policy age,XJTU-SY,,0,Bearing2_4,42,32
+PPO: No policy age,XJTU-SY,,0,Bearing2_5,339,185
+PPO: No policy age,XJTU-SY,,0,Bearing3_1,2538,2409
+PPO: No policy age,XJTU-SY,,0,Bearing3_2,2496,2069
+PPO: No policy age,XJTU-SY,,0,Bearing3_3,371,344
+PPO: No policy age,XJTU-SY,,0,Bearing3_4,1515,1421
+PPO: No policy age,XJTU-SY,,0,Bearing3_5,114,10
+PPO: No policy age,XJTU-SY,,1,Bearing1_1,123,23
+PPO: No policy age,XJTU-SY,,1,Bearing1_2,161,41
+PPO: No policy age,XJTU-SY,,1,Bearing1_3,158,64
+PPO: No policy age,XJTU-SY,,1,Bearing1_4,122,88
+PPO: No policy age,XJTU-SY,,1,Bearing1_5,52,37
+PPO: No policy age,XJTU-SY,,1,Bearing2_1,491,455
+PPO: No policy age,XJTU-SY,,1,Bearing2_2,161,50
+PPO: No policy age,XJTU-SY,,1,Bearing2_3,533,135
+PPO: No policy age,XJTU-SY,,1,Bearing2_4,42,31
+PPO: No policy age,XJTU-SY,,1,Bearing2_5,339,172
+PPO: No policy age,XJTU-SY,,1,Bearing3_1,2538,756
+PPO: No policy age,XJTU-SY,,1,Bearing3_2,2496,391
+PPO: No policy age,XJTU-SY,,1,Bearing3_3,371,343
+PPO: No policy age,XJTU-SY,,1,Bearing3_4,1515,1003
+PPO: No policy age,XJTU-SY,,1,Bearing3_5,114,9
+PPO: No policy age,XJTU-SY,,2,Bearing1_1,123,76
+PPO: No policy age,XJTU-SY,,2,Bearing1_2,161,48
+PPO: No policy age,XJTU-SY,,2,Bearing1_3,158,97
+PPO: No policy age,XJTU-SY,,2,Bearing1_4,122,122
+PPO: No policy age,XJTU-SY,,2,Bearing1_5,52,38
+PPO: No policy age,XJTU-SY,,2,Bearing2_1,491,455
+PPO: No policy age,XJTU-SY,,2,Bearing2_2,161,53
+PPO: No policy age,XJTU-SY,,2,Bearing2_3,533,326
+PPO: No policy age,XJTU-SY,,2,Bearing2_4,42,32
+PPO: No policy age,XJTU-SY,,2,Bearing2_5,339,187
+PPO: No policy age,XJTU-SY,,2,Bearing3_1,2538,2437
+PPO: No policy age,XJTU-SY,,2,Bearing3_2,2496,2210
+PPO: No policy age,XJTU-SY,,2,Bearing3_3,371,345
+PPO: No policy age,XJTU-SY,,2,Bearing3_4,1515,1421
+PPO: No policy age,XJTU-SY,,2,Bearing3_5,114,11
+PPO: No policy age,XJTU-SY,,3,Bearing1_1,123,76
+PPO: No policy age,XJTU-SY,,3,Bearing1_2,161,44
+PPO: No policy age,XJTU-SY,,3,Bearing1_3,158,93
+PPO: No policy age,XJTU-SY,,3,Bearing1_4,122,122
+PPO: No policy age,XJTU-SY,,3,Bearing1_5,52,38
+PPO: No policy age,XJTU-SY,,3,Bearing2_1,491,455
+PPO: No policy age,XJTU-SY,,3,Bearing2_2,161,53
+PPO: No policy age,XJTU-SY,,3,Bearing2_3,533,324
+PPO: No policy age,XJTU-SY,,3,Bearing2_4,42,32
+PPO: No policy age,XJTU-SY,,3,Bearing2_5,339,184
+PPO: No policy age,XJTU-SY,,3,Bearing3_1,2538,2408
+PPO: No policy age,XJTU-SY,,3,Bearing3_2,2496,2029
+PPO: No policy age,XJTU-SY,,3,Bearing3_3,371,344
+PPO: No policy age,XJTU-SY,,3,Bearing3_4,1515,1419
+PPO: No policy age,XJTU-SY,,3,Bearing3_5,114,10
+PPO: No policy age,XJTU-SY,,4,Bearing1_1,123,79
+PPO: No policy age,XJTU-SY,,4,Bearing1_2,161,59
+PPO: No policy age,XJTU-SY,,4,Bearing1_3,158,108
+PPO: No policy age,XJTU-SY,,4,Bearing1_4,122,122
+PPO: No policy age,XJTU-SY,,4,Bearing1_5,52,41
+PPO: No policy age,XJTU-SY,,4,Bearing2_1,491,455
+PPO: No policy age,XJTU-SY,,4,Bearing2_2,161,59
+PPO: No policy age,XJTU-SY,,4,Bearing2_3,533,329
+PPO: No policy age,XJTU-SY,,4,Bearing2_4,42,33
+PPO: No policy age,XJTU-SY,,4,Bearing2_5,339,197
+PPO: No policy age,XJTU-SY,,4,Bearing3_1,2538,2450
+PPO: No policy age,XJTU-SY,,4,Bearing3_2,2496,2223
+PPO: No policy age,XJTU-SY,,4,Bearing3_3,371,346
+PPO: No policy age,XJTU-SY,,4,Bearing3_4,1515,1444
+PPO: No policy age,XJTU-SY,,4,Bearing3_5,114,13
+PPO: No forecaster age,FEMTO,4,0,Bearing1_1,468,133
+PPO: No forecaster age,FEMTO,4,0,Bearing1_2,146,15
+PPO: No forecaster age,FEMTO,3,0,Bearing1_3,396,85
+PPO: No forecaster age,FEMTO,3,0,Bearing1_4,238,174
+PPO: No forecaster age,FEMTO,1,0,Bearing1_5,411,243
+PPO: No forecaster age,FEMTO,1,0,Bearing1_6,408,272
+PPO: No forecaster age,FEMTO,0,0,Bearing1_7,377,369
+PPO: No forecaster age,FEMTO,0,0,Bearing2_1,152,26
+PPO: No forecaster age,FEMTO,2,0,Bearing2_2,133,45
+PPO: No forecaster age,FEMTO,1,0,Bearing2_3,326,45
+PPO: No forecaster age,FEMTO,2,0,Bearing2_4,126,64
+PPO: No forecaster age,FEMTO,0,0,Bearing2_5,386,30
+PPO: No forecaster age,FEMTO,4,0,Bearing2_6,117,115
+PPO: No forecaster age,FEMTO,3,0,Bearing2_7,39,
+PPO: No forecaster age,FEMTO,0,0,Bearing3_1,86,83
+PPO: No forecaster age,FEMTO,1,0,Bearing3_2,273,230
+PPO: No forecaster age,FEMTO,2,0,Bearing3_3,73,62
+PPO: No forecaster age,FEMTO,4,1,Bearing1_1,468,133
+PPO: No forecaster age,FEMTO,4,1,Bearing1_2,146,12
+PPO: No forecaster age,FEMTO,3,1,Bearing1_3,396,72
+PPO: No forecaster age,FEMTO,3,1,Bearing1_4,238,181
+PPO: No forecaster age,FEMTO,1,1,Bearing1_5,411,93
+PPO: No forecaster age,FEMTO,1,1,Bearing1_6,408,94
+PPO: No forecaster age,FEMTO,0,1,Bearing1_7,377,370
+PPO: No forecaster age,FEMTO,0,1,Bearing2_1,152,28
+PPO: No forecaster age,FEMTO,2,1,Bearing2_2,133,36
+PPO: No forecaster age,FEMTO,1,1,Bearing2_3,326,44
+PPO: No forecaster age,FEMTO,2,1,Bearing2_4,126,125
+PPO: No forecaster age,FEMTO,0,1,Bearing2_5,386,42
+PPO: No forecaster age,FEMTO,4,1,Bearing2_6,117,115
+PPO: No forecaster age,FEMTO,3,1,Bearing2_7,39,38
+PPO: No forecaster age,FEMTO,0,1,Bearing3_1,86,83
+PPO: No forecaster age,FEMTO,1,1,Bearing3_2,273,26
+PPO: No forecaster age,FEMTO,2,1,Bearing3_3,73,55
+PPO: No forecaster age,FEMTO,4,2,Bearing1_1,468,69
+PPO: No forecaster age,FEMTO,4,2,Bearing1_2,146,11
+PPO: No forecaster age,FEMTO,3,2,Bearing1_3,396,72
+PPO: No forecaster age,FEMTO,3,2,Bearing1_4,238,115
+PPO: No forecaster age,FEMTO,1,2,Bearing1_5,411,136
+PPO: No forecaster age,FEMTO,1,2,Bearing1_6,408,96
+PPO: No forecaster age,FEMTO,0,2,Bearing1_7,377,90
+PPO: No forecaster age,FEMTO,0,2,Bearing2_1,152,25
+PPO: No forecaster age,FEMTO,2,2,Bearing2_2,133,36
+PPO: No forecaster age,FEMTO,1,2,Bearing2_3,326,45
+PPO: No forecaster age,FEMTO,2,2,Bearing2_4,126,125
+PPO: No forecaster age,FEMTO,0,2,Bearing2_5,386,46
+PPO: No forecaster age,FEMTO,4,2,Bearing2_6,117,74
+PPO: No forecaster age,FEMTO,3,2,Bearing2_7,39,38
+PPO: No forecaster age,FEMTO,0,2,Bearing3_1,86,83
+PPO: No forecaster age,FEMTO,1,2,Bearing3_2,273,106
+PPO: No forecaster age,FEMTO,2,2,Bearing3_3,73,55
+PPO: No forecaster age,FEMTO,4,3,Bearing1_1,468,133
+PPO: No forecaster age,FEMTO,4,3,Bearing1_2,146,12
+PPO: No forecaster age,FEMTO,3,3,Bearing1_3,396,59
+PPO: No forecaster age,FEMTO,3,3,Bearing1_4,238,181
+PPO: No forecaster age,FEMTO,1,3,Bearing1_5,411,266
+PPO: No forecaster age,FEMTO,1,3,Bearing1_6,408,406
+PPO: No forecaster age,FEMTO,0,3,Bearing1_7,377,368
+PPO: No forecaster age,FEMTO,0,3,Bearing2_1,152,25
+PPO: No forecaster age,FEMTO,2,3,Bearing2_2,133,70
+PPO: No forecaster age,FEMTO,1,3,Bearing2_3,326,325
+PPO: No forecaster age,FEMTO,2,3,Bearing2_4,126,
+PPO: No forecaster age,FEMTO,0,3,Bearing2_5,386,17
+PPO: No forecaster age,FEMTO,4,3,Bearing2_6,117,115
+PPO: No forecaster age,FEMTO,3,3,Bearing2_7,39,20
+PPO: No forecaster age,FEMTO,0,3,Bearing3_1,86,83
+PPO: No forecaster age,FEMTO,1,3,Bearing3_2,273,270
+PPO: No forecaster age,FEMTO,2,3,Bearing3_3,73,72
+PPO: No forecaster age,FEMTO,4,4,Bearing1_1,468,220
+PPO: No forecaster age,FEMTO,4,4,Bearing1_2,146,92
+PPO: No forecaster age,FEMTO,3,4,Bearing1_3,396,18
+PPO: No forecaster age,FEMTO,3,4,Bearing1_4,238,181
+PPO: No forecaster age,FEMTO,1,4,Bearing1_5,411,125
+PPO: No forecaster age,FEMTO,1,4,Bearing1_6,408,174
+PPO: No forecaster age,FEMTO,0,4,Bearing1_7,377,369
+PPO: No forecaster age,FEMTO,0,4,Bearing2_1,152,25
+PPO: No forecaster age,FEMTO,2,4,Bearing2_2,133,37
+PPO: No forecaster age,FEMTO,1,4,Bearing2_3,326,45
+PPO: No forecaster age,FEMTO,2,4,Bearing2_4,126,125
+PPO: No forecaster age,FEMTO,0,4,Bearing2_5,386,19
+PPO: No forecaster age,FEMTO,4,4,Bearing2_6,117,116
+PPO: No forecaster age,FEMTO,3,4,Bearing2_7,39,20
+PPO: No forecaster age,FEMTO,0,4,Bearing3_1,86,83
+PPO: No forecaster age,FEMTO,1,4,Bearing3_2,273,26
+PPO: No forecaster age,FEMTO,2,4,Bearing3_3,73,56
+PPO: No forecaster age,XJTU-SY,,0,Bearing1_1,123,65
+PPO: No forecaster age,XJTU-SY,,0,Bearing1_2,161,38
+PPO: No forecaster age,XJTU-SY,,0,Bearing1_3,158,71
+PPO: No forecaster age,XJTU-SY,,0,Bearing1_4,122,88
+PPO: No forecaster age,XJTU-SY,,0,Bearing1_5,52,37
+PPO: No forecaster age,XJTU-SY,,0,Bearing2_1,491,176
+PPO: No forecaster age,XJTU-SY,,0,Bearing2_2,161,51
+PPO: No forecaster age,XJTU-SY,,0,Bearing2_3,533,129
+PPO: No forecaster age,XJTU-SY,,0,Bearing2_4,42,31
+PPO: No forecaster age,XJTU-SY,,0,Bearing2_5,339,124
+PPO: No forecaster age,XJTU-SY,,0,Bearing3_1,2538,162
+PPO: No forecaster age,XJTU-SY,,0,Bearing3_2,2496,86
+PPO: No forecaster age,XJTU-SY,,0,Bearing3_3,371,183
+PPO: No forecaster age,XJTU-SY,,0,Bearing3_4,1515,138
+PPO: No forecaster age,XJTU-SY,,0,Bearing3_5,114,9
+PPO: No forecaster age,XJTU-SY,,1,Bearing1_1,123,78
+PPO: No forecaster age,XJTU-SY,,1,Bearing1_2,161,51
+PPO: No forecaster age,XJTU-SY,,1,Bearing1_3,158,95
+PPO: No forecaster age,XJTU-SY,,1,Bearing1_4,122,122
+PPO: No forecaster age,XJTU-SY,,1,Bearing1_5,52,38
+PPO: No forecaster age,XJTU-SY,,1,Bearing2_1,491,454
+PPO: No forecaster age,XJTU-SY,,1,Bearing2_2,161,53
+PPO: No forecaster age,XJTU-SY,,1,Bearing2_3,533,237
+PPO: No forecaster age,XJTU-SY,,1,Bearing2_4,42,32
+PPO: No forecaster age,XJTU-SY,,1,Bearing2_5,339,173
+PPO: No forecaster age,XJTU-SY,,1,Bearing3_1,2538,516
+PPO: No forecaster age,XJTU-SY,,1,Bearing3_2,2496,385
+PPO: No forecaster age,XJTU-SY,,1,Bearing3_3,371,343
+PPO: No forecaster age,XJTU-SY,,1,Bearing3_4,1515,521
+PPO: No forecaster age,XJTU-SY,,1,Bearing3_5,114,9
+PPO: No forecaster age,XJTU-SY,,2,Bearing1_1,123,79
+PPO: No forecaster age,XJTU-SY,,2,Bearing1_2,161,58
+PPO: No forecaster age,XJTU-SY,,2,Bearing1_3,158,111
+PPO: No forecaster age,XJTU-SY,,2,Bearing1_4,122,122
+PPO: No forecaster age,XJTU-SY,,2,Bearing1_5,52,40
+PPO: No forecaster age,XJTU-SY,,2,Bearing2_1,491,455
+PPO: No forecaster age,XJTU-SY,,2,Bearing2_2,161,59
+PPO: No forecaster age,XJTU-SY,,2,Bearing2_3,533,325
+PPO: No forecaster age,XJTU-SY,,2,Bearing2_4,42,33
+PPO: No forecaster age,XJTU-SY,,2,Bearing2_5,339,194
+PPO: No forecaster age,XJTU-SY,,2,Bearing3_1,2538,877
+PPO: No forecaster age,XJTU-SY,,2,Bearing3_2,2496,669
+PPO: No forecaster age,XJTU-SY,,2,Bearing3_3,371,344
+PPO: No forecaster age,XJTU-SY,,2,Bearing3_4,1515,764
+PPO: No forecaster age,XJTU-SY,,2,Bearing3_5,114,11
+PPO: No forecaster age,XJTU-SY,,3,Bearing1_1,123,78
+PPO: No forecaster age,XJTU-SY,,3,Bearing1_2,161,48
+PPO: No forecaster age,XJTU-SY,,3,Bearing1_3,158,94
+PPO: No forecaster age,XJTU-SY,,3,Bearing1_4,122,122
+PPO: No forecaster age,XJTU-SY,,3,Bearing1_5,52,42
+PPO: No forecaster age,XJTU-SY,,3,Bearing2_1,491,455
+PPO: No forecaster age,XJTU-SY,,3,Bearing2_2,161,55
+PPO: No forecaster age,XJTU-SY,,3,Bearing2_3,533,171
+PPO: No forecaster age,XJTU-SY,,3,Bearing2_4,42,34
+PPO: No forecaster age,XJTU-SY,,3,Bearing2_5,339,183
+PPO: No forecaster age,XJTU-SY,,3,Bearing3_1,2538,519
+PPO: No forecaster age,XJTU-SY,,3,Bearing3_2,2496,206
+PPO: No forecaster age,XJTU-SY,,3,Bearing3_3,371,344
+PPO: No forecaster age,XJTU-SY,,3,Bearing3_4,1515,422
+PPO: No forecaster age,XJTU-SY,,3,Bearing3_5,114,15
+PPO: No forecaster age,XJTU-SY,,4,Bearing1_1,123,79
+PPO: No forecaster age,XJTU-SY,,4,Bearing1_2,161,54
+PPO: No forecaster age,XJTU-SY,,4,Bearing1_3,158,103
+PPO: No forecaster age,XJTU-SY,,4,Bearing1_4,122,122
+PPO: No forecaster age,XJTU-SY,,4,Bearing1_5,52,39
+PPO: No forecaster age,XJTU-SY,,4,Bearing2_1,491,455
+PPO: No forecaster age,XJTU-SY,,4,Bearing2_2,161,54
+PPO: No forecaster age,XJTU-SY,,4,Bearing2_3,533,317
+PPO: No forecaster age,XJTU-SY,,4,Bearing2_4,42,32
+PPO: No forecaster age,XJTU-SY,,4,Bearing2_5,339,187
+PPO: No forecaster age,XJTU-SY,,4,Bearing3_1,2538,657
+PPO: No forecaster age,XJTU-SY,,4,Bearing3_2,2496,515
+PPO: No forecaster age,XJTU-SY,,4,Bearing3_3,371,343
+PPO: No forecaster age,XJTU-SY,,4,Bearing3_4,1515,678
+PPO: No forecaster age,XJTU-SY,,4,Bearing3_5,114,11
+PPO: No age,FEMTO,4,0,Bearing1_1,468,133
+PPO: No age,FEMTO,4,0,Bearing1_2,146,12
+PPO: No age,FEMTO,3,0,Bearing1_3,396,274
+PPO: No age,FEMTO,3,0,Bearing1_4,238,183
+PPO: No age,FEMTO,1,0,Bearing1_5,411,243
+PPO: No age,FEMTO,1,0,Bearing1_6,408,275
+PPO: No age,FEMTO,0,0,Bearing1_7,377,369
+PPO: No age,FEMTO,0,0,Bearing2_1,152,25
+PPO: No age,FEMTO,2,0,Bearing2_2,133,61
+PPO: No age,FEMTO,1,0,Bearing2_3,326,45
+PPO: No age,FEMTO,2,0,Bearing2_4,126,126
+PPO: No age,FEMTO,0,0,Bearing2_5,386,20
+PPO: No age,FEMTO,4,0,Bearing2_6,117,116
+PPO: No age,FEMTO,3,0,Bearing2_7,39,28
+PPO: No age,FEMTO,0,0,Bearing3_1,86,83
+PPO: No age,FEMTO,1,0,Bearing3_2,273,242
+PPO: No age,FEMTO,2,0,Bearing3_3,73,71
+PPO: No age,FEMTO,4,1,Bearing1_1,468,133
+PPO: No age,FEMTO,4,1,Bearing1_2,146,12
+PPO: No age,FEMTO,3,1,Bearing1_3,396,354
+PPO: No age,FEMTO,3,1,Bearing1_4,238,183
+PPO: No age,FEMTO,1,1,Bearing1_5,411,27
+PPO: No age,FEMTO,1,1,Bearing1_6,408,274
+PPO: No age,FEMTO,0,1,Bearing1_7,377,369
+PPO: No age,FEMTO,0,1,Bearing2_1,152,25
+PPO: No age,FEMTO,2,1,Bearing2_2,133,127
+PPO: No age,FEMTO,1,1,Bearing2_3,326,44
+PPO: No age,FEMTO,2,1,Bearing2_4,126,126
+PPO: No age,FEMTO,0,1,Bearing2_5,386,20
+PPO: No age,FEMTO,4,1,Bearing2_6,117,115
+PPO: No age,FEMTO,3,1,Bearing2_7,39,38
+PPO: No age,FEMTO,0,1,Bearing3_1,86,83
+PPO: No age,FEMTO,1,1,Bearing3_2,273,24
+PPO: No age,FEMTO,2,1,Bearing3_3,73,72
+PPO: No age,FEMTO,4,2,Bearing1_1,468,221
+PPO: No age,FEMTO,4,2,Bearing1_2,146,17
+PPO: No age,FEMTO,3,2,Bearing1_3,396,272
+PPO: No age,FEMTO,3,2,Bearing1_4,238,183
+PPO: No age,FEMTO,1,2,Bearing1_5,411,243
+PPO: No age,FEMTO,1,2,Bearing1_6,408,275
+PPO: No age,FEMTO,0,2,Bearing1_7,377,370
+PPO: No age,FEMTO,0,2,Bearing2_1,152,26
+PPO: No age,FEMTO,2,2,Bearing2_2,133,70
+PPO: No age,FEMTO,1,2,Bearing2_3,326,45
+PPO: No age,FEMTO,2,2,Bearing2_4,126,126
+PPO: No age,FEMTO,0,2,Bearing2_5,386,379
+PPO: No age,FEMTO,4,2,Bearing2_6,117,116
+PPO: No age,FEMTO,3,2,Bearing2_7,39,27
+PPO: No age,FEMTO,0,2,Bearing3_1,86,83
+PPO: No age,FEMTO,1,2,Bearing3_2,273,242
+PPO: No age,FEMTO,2,2,Bearing3_3,73,65
+PPO: No age,FEMTO,4,3,Bearing1_1,468,222
+PPO: No age,FEMTO,4,3,Bearing1_2,146,22
+PPO: No age,FEMTO,3,3,Bearing1_3,396,273
+PPO: No age,FEMTO,3,3,Bearing1_4,238,182
+PPO: No age,FEMTO,1,3,Bearing1_5,411,403
+PPO: No age,FEMTO,1,3,Bearing1_6,408,323
+PPO: No age,FEMTO,0,3,Bearing1_7,377,369
+PPO: No age,FEMTO,0,3,Bearing2_1,152,25
+PPO: No age,FEMTO,2,3,Bearing2_2,133,71
+PPO: No age,FEMTO,1,3,Bearing2_3,326,45
+PPO: No age,FEMTO,2,3,Bearing2_4,126,126
+PPO: No age,FEMTO,0,3,Bearing2_5,386,20
+PPO: No age,FEMTO,4,3,Bearing2_6,117,117
+PPO: No age,FEMTO,3,3,Bearing2_7,39,28
+PPO: No age,FEMTO,0,3,Bearing3_1,86,83
+PPO: No age,FEMTO,1,3,Bearing3_2,273,251
+PPO: No age,FEMTO,2,3,Bearing3_3,73,71
+PPO: No age,FEMTO,4,4,Bearing1_1,468,68
+PPO: No age,FEMTO,4,4,Bearing1_2,146,10
+PPO: No age,FEMTO,3,4,Bearing1_3,396,273
+PPO: No age,FEMTO,3,4,Bearing1_4,238,183
+PPO: No age,FEMTO,1,4,Bearing1_5,411,410
+PPO: No age,FEMTO,1,4,Bearing1_6,408,
+PPO: No age,FEMTO,0,4,Bearing1_7,377,3
+PPO: No age,FEMTO,0,4,Bearing2_1,152,6
+PPO: No age,FEMTO,2,4,Bearing2_2,133,84
+PPO: No age,FEMTO,1,4,Bearing2_3,326,47
+PPO: No age,FEMTO,2,4,Bearing2_4,126,126
+PPO: No age,FEMTO,0,4,Bearing2_5,386,13
+PPO: No age,FEMTO,4,4,Bearing2_6,117,74
+PPO: No age,FEMTO,3,4,Bearing2_7,39,38
+PPO: No age,FEMTO,0,4,Bearing3_1,86,4
+PPO: No age,FEMTO,1,4,Bearing3_2,273,243
+PPO: No age,FEMTO,2,4,Bearing3_3,73,71
+PPO: No age,XJTU-SY,,0,Bearing1_1,123,78
+PPO: No age,XJTU-SY,,0,Bearing1_2,161,52
+PPO: No age,XJTU-SY,,0,Bearing1_3,158,103
+PPO: No age,XJTU-SY,,0,Bearing1_4,122,122
+PPO: No age,XJTU-SY,,0,Bearing1_5,52,38
+PPO: No age,XJTU-SY,,0,Bearing2_1,491,455
+PPO: No age,XJTU-SY,,0,Bearing2_2,161,53
+PPO: No age,XJTU-SY,,0,Bearing2_3,533,325
+PPO: No age,XJTU-SY,,0,Bearing2_4,42,32
+PPO: No age,XJTU-SY,,0,Bearing2_5,339,188
+PPO: No age,XJTU-SY,,0,Bearing3_1,2538,2442
+PPO: No age,XJTU-SY,,0,Bearing3_2,2496,2210
+PPO: No age,XJTU-SY,,0,Bearing3_3,371,344
+PPO: No age,XJTU-SY,,0,Bearing3_4,1515,1423
+PPO: No age,XJTU-SY,,0,Bearing3_5,114,9
+PPO: No age,XJTU-SY,,1,Bearing1_1,123,79
+PPO: No age,XJTU-SY,,1,Bearing1_2,161,53
+PPO: No age,XJTU-SY,,1,Bearing1_3,158,104
+PPO: No age,XJTU-SY,,1,Bearing1_4,122,122
+PPO: No age,XJTU-SY,,1,Bearing1_5,52,40
+PPO: No age,XJTU-SY,,1,Bearing2_1,491,456
+PPO: No age,XJTU-SY,,1,Bearing2_2,161,54
+PPO: No age,XJTU-SY,,1,Bearing2_3,533,325
+PPO: No age,XJTU-SY,,1,Bearing2_4,42,32
+PPO: No age,XJTU-SY,,1,Bearing2_5,339,188
+PPO: No age,XJTU-SY,,1,Bearing3_1,2538,2443
+PPO: No age,XJTU-SY,,1,Bearing3_2,2496,2210
+PPO: No age,XJTU-SY,,1,Bearing3_3,371,344
+PPO: No age,XJTU-SY,,1,Bearing3_4,1515,1427
+PPO: No age,XJTU-SY,,1,Bearing3_5,114,11
+PPO: No age,XJTU-SY,,2,Bearing1_1,123,23
+PPO: No age,XJTU-SY,,2,Bearing1_2,161,38
+PPO: No age,XJTU-SY,,2,Bearing1_3,158,71
+PPO: No age,XJTU-SY,,2,Bearing1_4,122,90
+PPO: No age,XJTU-SY,,2,Bearing1_5,52,36
+PPO: No age,XJTU-SY,,2,Bearing2_1,491,455
+PPO: No age,XJTU-SY,,2,Bearing2_2,161,50
+PPO: No age,XJTU-SY,,2,Bearing2_3,533,136
+PPO: No age,XJTU-SY,,2,Bearing2_4,42,31
+PPO: No age,XJTU-SY,,2,Bearing2_5,339,167
+PPO: No age,XJTU-SY,,2,Bearing3_1,2538,2392
+PPO: No age,XJTU-SY,,2,Bearing3_2,2496,173
+PPO: No age,XJTU-SY,,2,Bearing3_3,371,343
+PPO: No age,XJTU-SY,,2,Bearing3_4,1515,1420
+PPO: No age,XJTU-SY,,2,Bearing3_5,114,8
+PPO: No age,XJTU-SY,,3,Bearing1_1,123,76
+PPO: No age,XJTU-SY,,3,Bearing1_2,161,41
+PPO: No age,XJTU-SY,,3,Bearing1_3,158,93
+PPO: No age,XJTU-SY,,3,Bearing1_4,122,122
+PPO: No age,XJTU-SY,,3,Bearing1_5,52,37
+PPO: No age,XJTU-SY,,3,Bearing2_1,491,455
+PPO: No age,XJTU-SY,,3,Bearing2_2,161,52
+PPO: No age,XJTU-SY,,3,Bearing2_3,533,318
+PPO: No age,XJTU-SY,,3,Bearing2_4,42,32
+PPO: No age,XJTU-SY,,3,Bearing2_5,339,185
+PPO: No age,XJTU-SY,,3,Bearing3_1,2538,2417
+PPO: No age,XJTU-SY,,3,Bearing3_2,2496,2173
+PPO: No age,XJTU-SY,,3,Bearing3_3,371,344
+PPO: No age,XJTU-SY,,3,Bearing3_4,1515,1421
+PPO: No age,XJTU-SY,,3,Bearing3_5,114,9
+PPO: No age,XJTU-SY,,4,Bearing1_1,123,79
+PPO: No age,XJTU-SY,,4,Bearing1_2,161,53
+PPO: No age,XJTU-SY,,4,Bearing1_3,158,104
+PPO: No age,XJTU-SY,,4,Bearing1_4,122,122
+PPO: No age,XJTU-SY,,4,Bearing1_5,52,38
+PPO: No age,XJTU-SY,,4,Bearing2_1,491,456
+PPO: No age,XJTU-SY,,4,Bearing2_2,161,53
+PPO: No age,XJTU-SY,,4,Bearing2_3,533,322
+PPO: No age,XJTU-SY,,4,Bearing2_4,42,32
+PPO: No age,XJTU-SY,,4,Bearing2_5,339,186
+PPO: No age,XJTU-SY,,4,Bearing3_1,2538,2470
+PPO: No age,XJTU-SY,,4,Bearing3_2,2496,2210
+PPO: No age,XJTU-SY,,4,Bearing3_3,371,344
+PPO: No age,XJTU-SY,,4,Bearing3_4,1515,1424
+PPO: No age,XJTU-SY,,4,Bearing3_5,114,9
+Risk classifier: Full,FEMTO,4,,Bearing1_1,468,220
+Risk classifier: Full,FEMTO,4,,Bearing1_2,146,11
+Risk classifier: Full,FEMTO,3,,Bearing1_3,396,105
+Risk classifier: Full,FEMTO,3,,Bearing1_4,238,74
+Risk classifier: Full,FEMTO,1,,Bearing1_5,411,27
+Risk classifier: Full,FEMTO,1,,Bearing1_6,408,367
+Risk classifier: Full,FEMTO,0,,Bearing1_7,377,369
+Risk classifier: Full,FEMTO,0,,Bearing2_1,152,27
+Risk classifier: Full,FEMTO,2,,Bearing2_2,133,53
+Risk classifier: Full,FEMTO,1,,Bearing2_3,326,45
+Risk classifier: Full,FEMTO,2,,Bearing2_4,126,125
+Risk classifier: Full,FEMTO,0,,Bearing2_5,386,32
+Risk classifier: Full,FEMTO,4,,Bearing2_6,117,115
+Risk classifier: Full,FEMTO,3,,Bearing2_7,39,
+Risk classifier: Full,FEMTO,0,,Bearing3_1,86,82
+Risk classifier: Full,FEMTO,1,,Bearing3_2,273,27
+Risk classifier: Full,FEMTO,2,,Bearing3_3,73,65
+Risk classifier: Full,XJTU-SY,,,Bearing1_1,123,79
+Risk classifier: Full,XJTU-SY,,,Bearing1_2,161,58
+Risk classifier: Full,XJTU-SY,,,Bearing1_3,158,107
+Risk classifier: Full,XJTU-SY,,,Bearing1_4,122,122
+Risk classifier: Full,XJTU-SY,,,Bearing1_5,52,41
+Risk classifier: Full,XJTU-SY,,,Bearing2_1,491,456
+Risk classifier: Full,XJTU-SY,,,Bearing2_2,161,54
+Risk classifier: Full,XJTU-SY,,,Bearing2_3,533,123
+Risk classifier: Full,XJTU-SY,,,Bearing2_4,42,34
+Risk classifier: Full,XJTU-SY,,,Bearing2_5,339,197
+Risk classifier: Full,XJTU-SY,,,Bearing3_1,2538,2469
+Risk classifier: Full,XJTU-SY,,,Bearing3_2,2496,114
+Risk classifier: Full,XJTU-SY,,,Bearing3_3,371,345
+Risk classifier: Full,XJTU-SY,,,Bearing3_4,1515,112
+Risk classifier: Full,XJTU-SY,,,Bearing3_5,114,27
+Risk classifier: No age,FEMTO,4,,Bearing1_1,468,220
+Risk classifier: No age,FEMTO,4,,Bearing1_2,146,12
+Risk classifier: No age,FEMTO,3,,Bearing1_3,396,284
+Risk classifier: No age,FEMTO,3,,Bearing1_4,238,183
+Risk classifier: No age,FEMTO,1,,Bearing1_5,411,118
+Risk classifier: No age,FEMTO,1,,Bearing1_6,408,37
+Risk classifier: No age,FEMTO,0,,Bearing1_7,377,369
+Risk classifier: No age,FEMTO,0,,Bearing2_1,152,26
+Risk classifier: No age,FEMTO,2,,Bearing2_2,133,44
+Risk classifier: No age,FEMTO,1,,Bearing2_3,326,45
+Risk classifier: No age,FEMTO,2,,Bearing2_4,126,60
+Risk classifier: No age,FEMTO,0,,Bearing2_5,386,379
+Risk classifier: No age,FEMTO,4,,Bearing2_6,117,117
+Risk classifier: No age,FEMTO,3,,Bearing2_7,39,38
+Risk classifier: No age,FEMTO,0,,Bearing3_1,86,83
+Risk classifier: No age,FEMTO,1,,Bearing3_2,273,241
+Risk classifier: No age,FEMTO,2,,Bearing3_3,73,59
+Risk classifier: No age,XJTU-SY,,,Bearing1_1,123,79
+Risk classifier: No age,XJTU-SY,,,Bearing1_2,161,57
+Risk classifier: No age,XJTU-SY,,,Bearing1_3,158,109
+Risk classifier: No age,XJTU-SY,,,Bearing1_4,122,122
+Risk classifier: No age,XJTU-SY,,,Bearing1_5,52,41
+Risk classifier: No age,XJTU-SY,,,Bearing2_1,491,457
+Risk classifier: No age,XJTU-SY,,,Bearing2_2,161,59
+Risk classifier: No age,XJTU-SY,,,Bearing2_3,533,327
+Risk classifier: No age,XJTU-SY,,,Bearing2_4,42,34
+Risk classifier: No age,XJTU-SY,,,Bearing2_5,339,197
+Risk classifier: No age,XJTU-SY,,,Bearing3_1,2538,2471
+Risk classifier: No age,XJTU-SY,,,Bearing3_2,2496,2222
+Risk classifier: No age,XJTU-SY,,,Bearing3_3,371,344
+Risk classifier: No age,XJTU-SY,,,Bearing3_4,1515,1442
+Risk classifier: No age,XJTU-SY,,,Bearing3_5,114,11
+Forecast rule: Full,FEMTO,4,,Bearing1_1,468,285
+Forecast rule: Full,FEMTO,4,,Bearing1_2,146,12
+Forecast rule: Full,FEMTO,3,,Bearing1_3,396,48
+Forecast rule: Full,FEMTO,3,,Bearing1_4,238,182
+Forecast rule: Full,FEMTO,1,,Bearing1_5,411,93
+Forecast rule: Full,FEMTO,1,,Bearing1_6,408,37
+Forecast rule: Full,FEMTO,0,,Bearing1_7,377,371
+Forecast rule: Full,FEMTO,0,,Bearing2_1,152,102
+Forecast rule: Full,FEMTO,2,,Bearing2_2,133,128
+Forecast rule: Full,FEMTO,1,,Bearing2_3,326,78
+Forecast rule: Full,FEMTO,2,,Bearing2_4,126,126
+Forecast rule: Full,FEMTO,0,,Bearing2_5,386,250
+Forecast rule: Full,FEMTO,4,,Bearing2_6,117,115
+Forecast rule: Full,FEMTO,3,,Bearing2_7,39,
+Forecast rule: Full,FEMTO,0,,Bearing3_1,86,83
+Forecast rule: Full,FEMTO,1,,Bearing3_2,273,34
+Forecast rule: Full,FEMTO,2,,Bearing3_3,73,
+Forecast rule: Full,XJTU-SY,,,Bearing1_1,123,79
+Forecast rule: Full,XJTU-SY,,,Bearing1_2,161,58
+Forecast rule: Full,XJTU-SY,,,Bearing1_3,158,107
+Forecast rule: Full,XJTU-SY,,,Bearing1_4,122,122
+Forecast rule: Full,XJTU-SY,,,Bearing1_5,52,
+Forecast rule: Full,XJTU-SY,,,Bearing2_1,491,361
+Forecast rule: Full,XJTU-SY,,,Bearing2_2,161,59
+Forecast rule: Full,XJTU-SY,,,Bearing2_3,533,354
+Forecast rule: Full,XJTU-SY,,,Bearing2_4,42,
+Forecast rule: Full,XJTU-SY,,,Bearing2_5,339,258
+Forecast rule: Full,XJTU-SY,,,Bearing3_1,2538,757
+Forecast rule: Full,XJTU-SY,,,Bearing3_2,2496,453
+Forecast rule: Full,XJTU-SY,,,Bearing3_3,371,345
+Forecast rule: Full,XJTU-SY,,,Bearing3_4,1515,383
+Forecast rule: Full,XJTU-SY,,,Bearing3_5,114,
+Forecast rule: No age,FEMTO,4,,Bearing1_1,468,133
+Forecast rule: No age,FEMTO,4,,Bearing1_2,146,12
+Forecast rule: No age,FEMTO,3,,Bearing1_3,396,17
+Forecast rule: No age,FEMTO,3,,Bearing1_4,238,182
+Forecast rule: No age,FEMTO,1,,Bearing1_5,411,93
+Forecast rule: No age,FEMTO,1,,Bearing1_6,408,3
+Forecast rule: No age,FEMTO,0,,Bearing1_7,377,369
+Forecast rule: No age,FEMTO,0,,Bearing2_1,152,25
+Forecast rule: No age,FEMTO,2,,Bearing2_2,133,41
+Forecast rule: No age,FEMTO,1,,Bearing2_3,326,45
+Forecast rule: No age,FEMTO,2,,Bearing2_4,126,61
+Forecast rule: No age,FEMTO,0,,Bearing2_5,386,20
+Forecast rule: No age,FEMTO,4,,Bearing2_6,117,115
+Forecast rule: No age,FEMTO,3,,Bearing2_7,39,36
+Forecast rule: No age,FEMTO,0,,Bearing3_1,86,83
+Forecast rule: No age,FEMTO,1,,Bearing3_2,273,36
+Forecast rule: No age,FEMTO,2,,Bearing3_3,73,56
+Forecast rule: No age,XJTU-SY,,,Bearing1_1,123,79
+Forecast rule: No age,XJTU-SY,,,Bearing1_2,161,57
+Forecast rule: No age,XJTU-SY,,,Bearing1_3,158,105
+Forecast rule: No age,XJTU-SY,,,Bearing1_4,122,122
+Forecast rule: No age,XJTU-SY,,,Bearing1_5,52,50
+Forecast rule: No age,XJTU-SY,,,Bearing2_1,491,456
+Forecast rule: No age,XJTU-SY,,,Bearing2_2,161,59
+Forecast rule: No age,XJTU-SY,,,Bearing2_3,533,326
+Forecast rule: No age,XJTU-SY,,,Bearing2_4,42,34
+Forecast rule: No age,XJTU-SY,,,Bearing2_5,339,256
+Forecast rule: No age,XJTU-SY,,,Bearing3_1,2538,2494
+Forecast rule: No age,XJTU-SY,,,Bearing3_2,2496,2220
+Forecast rule: No age,XJTU-SY,,,Bearing3_3,371,344
+Forecast rule: No age,XJTU-SY,,,Bearing3_4,1515,1442
+Forecast rule: No age,XJTU-SY,,,Bearing3_5,114,11
+Indicator Rule,FEMTO,4,,Bearing1_1,468,221
+Indicator Rule,FEMTO,4,,Bearing1_2,146,15
+Indicator Rule,FEMTO,3,,Bearing1_3,396,272
+Indicator Rule,FEMTO,3,,Bearing1_4,238,185
+Indicator Rule,FEMTO,1,,Bearing1_5,411,93
+Indicator Rule,FEMTO,1,,Bearing1_6,408,3
+Indicator Rule,FEMTO,0,,Bearing1_7,377,369
+Indicator Rule,FEMTO,0,,Bearing2_1,152,35
+Indicator Rule,FEMTO,2,,Bearing2_2,133,131
+Indicator Rule,FEMTO,1,,Bearing2_3,326,45
+Indicator Rule,FEMTO,2,,Bearing2_4,126,125
+Indicator Rule,FEMTO,0,,Bearing2_5,386,41
+Indicator Rule,FEMTO,4,,Bearing2_6,117,
+Indicator Rule,FEMTO,3,,Bearing2_7,39,27
+Indicator Rule,FEMTO,0,,Bearing3_1,86,85
+Indicator Rule,FEMTO,1,,Bearing3_2,273,34
+Indicator Rule,FEMTO,2,,Bearing3_3,73,71
+Indicator Rule,XJTU-SY,,,Bearing1_1,123,78
+Indicator Rule,XJTU-SY,,,Bearing1_2,161,52
+Indicator Rule,XJTU-SY,,,Bearing1_3,158,93
+Indicator Rule,XJTU-SY,,,Bearing1_4,122,122
+Indicator Rule,XJTU-SY,,,Bearing1_5,52,43
+Indicator Rule,XJTU-SY,,,Bearing2_1,491,461
+Indicator Rule,XJTU-SY,,,Bearing2_2,161,55
+Indicator Rule,XJTU-SY,,,Bearing2_3,533,171
+Indicator Rule,XJTU-SY,,,Bearing2_4,42,35
+Indicator Rule,XJTU-SY,,,Bearing2_5,339,194
+Indicator Rule,XJTU-SY,,,Bearing3_1,2538,2429
+Indicator Rule,XJTU-SY,,,Bearing3_2,2496,2210
+Indicator Rule,XJTU-SY,,,Bearing3_3,371,347
+Indicator Rule,XJTU-SY,,,Bearing3_4,1515,1431
+Indicator Rule,XJTU-SY,,,Bearing3_5,114,16
+Reactive,FEMTO,4,,Bearing1_1,468,
+Reactive,FEMTO,4,,Bearing1_2,146,
+Reactive,FEMTO,3,,Bearing1_3,396,
+Reactive,FEMTO,3,,Bearing1_4,238,
+Reactive,FEMTO,1,,Bearing1_5,411,
+Reactive,FEMTO,1,,Bearing1_6,408,
+Reactive,FEMTO,0,,Bearing1_7,377,
+Reactive,FEMTO,0,,Bearing2_1,152,
+Reactive,FEMTO,2,,Bearing2_2,133,
+Reactive,FEMTO,1,,Bearing2_3,326,
+Reactive,FEMTO,2,,Bearing2_4,126,
+Reactive,FEMTO,0,,Bearing2_5,386,
+Reactive,FEMTO,4,,Bearing2_6,117,
+Reactive,FEMTO,3,,Bearing2_7,39,
+Reactive,FEMTO,0,,Bearing3_1,86,
+Reactive,FEMTO,1,,Bearing3_2,273,
+Reactive,FEMTO,2,,Bearing3_3,73,
+Reactive,XJTU-SY,,,Bearing1_1,123,
+Reactive,XJTU-SY,,,Bearing1_2,161,
+Reactive,XJTU-SY,,,Bearing1_3,158,
+Reactive,XJTU-SY,,,Bearing1_4,122,
+Reactive,XJTU-SY,,,Bearing1_5,52,
+Reactive,XJTU-SY,,,Bearing2_1,491,
+Reactive,XJTU-SY,,,Bearing2_2,161,
+Reactive,XJTU-SY,,,Bearing2_3,533,
+Reactive,XJTU-SY,,,Bearing2_4,42,
+Reactive,XJTU-SY,,,Bearing2_5,339,
+Reactive,XJTU-SY,,,Bearing3_1,2538,
+Reactive,XJTU-SY,,,Bearing3_2,2496,
+Reactive,XJTU-SY,,,Bearing3_3,371,
+Reactive,XJTU-SY,,,Bearing3_4,1515,
+Reactive,XJTU-SY,,,Bearing3_5,114,

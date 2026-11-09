@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maintenance-arena"
+version = "1.0.0"
+description = "Gymnasium environments and benchmarks for learning when to order maintenance under an intervention delay"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [
+    { name = "Giuseppe Mannone", email = "giuseppe.mannone@ima.uni-stuttgart.de" },
+    { name = "Paula Fischer" },
+    { name = "Martin Dazer" },
+]
+keywords = ["maintenance", "prognostics", "reinforcement-learning", "simulation", "gymnasium",
+            "predictive-maintenance", "phm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = ["numpy>=2.4.2,<3", "gymnasium>=1.2.3,<2", "PyYAML>=6.0.3,<7"]
+
+[project.optional-dependencies]
+rl = ["torch>=2.8,<2.9", "stable-baselines3>=2.8,<2.9", "sb3-contrib>=2.8,<2.9"]
+plots = ["matplotlib>=3.10.6,<4"]
+bearings = ["pandas>=2.3,<3", "scikit-learn>=1.8,<1.9"]
+dev = ["pytest>=9.0.3,<10", "build>=1.5,<2", "twine>=6.2,<7"]
+
+[project.urls]
+Homepage = "https://github.com/SFZ-Uni-Stuttgart/MaintenanceArena"
+Documentation = "https://github.com/SFZ-Uni-Stuttgart/MaintenanceArena/tree/main/docs"
+Issues = "https://github.com/SFZ-Uni-Stuttgart/MaintenanceArena/issues"
+Changelog = "https://github.com/SFZ-Uni-Stuttgart/MaintenanceArena/blob/main/CHANGELOG.md"
+
+[project.scripts]
+maintenance-arena = "maintenance_arena.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+# Same suffixes as the exported runtime tree (tools/export_project.py TREE_SUFFIXES).
+maintenance_arena = ["**/*.json", "**/*.yaml", "**/*.yml", "**/*.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["training: bounded CPU optimizer/update validation"]

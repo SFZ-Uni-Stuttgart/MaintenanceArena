@@ -1,0 +1,26 @@
+{
+  "study": "Input-set ablation at L = 12",
+  "description": "Ten runs for each of three input sets: Full inputs, Deadline only and Health + rate. Unused inputs are multiplied by zero, so every set uses the same network. Runs with the same seed share initial weights and training lives. Every checkpoint is replayed on 800 diagnostic lives and the final policies on 800 further test lives, with the Rule calibrated on 256 separate lives.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "seed_namespace": 181026,
+  "seed_entropy": ["namespace", "purpose", "role"],
+  "roles": [26101801, 26101802, 26101803, 26101804, 26101805, 26101806, 26101807, 26101808, 26101809, 26101810],
+  "input_sets": {"full": "Full inputs", "deadline_only": "Deadline only", "health_rate": "Health + rate"},
+  "training": {
+    "steps": 204800,
+    "milestones": [51200, 102400, 153600, 204800],
+    "bank": {"split": "source_train", "purpose": 11, "pairs": 10781, "per_role": true}
+  },
+  "rule": {
+    "calibration_bank": {"split": "development", "purpose": 31, "lives": 256},
+    "grid": {
+      "health": [0.22, 0.25, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.45, 0.50, 0.60, 0.70],
+      "projection": [10, 12, 13, 14, 15, 16, 18, 20, 24, 28, 32, 40, 48]
+    },
+    "tie_anchors": {"health": 0.36, "projection": 15}
+  },
+  "diagnostic_bank": {"split": "development", "purpose": 41, "lives": 800},
+  "test_bank": {"split": "development", "purpose": 51, "lives": 800},
+  "bootstrap": {"replicates": 10000, "seed": 181026},
+  "contrasts": [["Full inputs", "Health + rate"], ["Full inputs", "Deadline only"], ["Full inputs", "Rule"]]
+}

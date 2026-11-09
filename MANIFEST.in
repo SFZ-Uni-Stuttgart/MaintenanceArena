@@ -1,0 +1,36 @@
+# Top-level files, the same names as METADATA in tools/export_project.py.
+include LICENSE THIRD_PARTY_NOTICES.md README.md CHANGELOG.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md
+include provenance.json .gitignore .gitattributes
+include CITATION.cff
+# Trees, the same suffixes as TREE_SUFFIXES (.github holds the workflow,
+# dependabot and the issue and pull-request templates; docs holds docs/figures).
+# The runtime package data (RUNTIME_DATA: data/profiles.json and
+# data/benchmark_tracks.json) comes in through package-data in pyproject.toml.
+recursive-include .github *.yml *.yaml *.md
+recursive-include docs *.md *.json *.svg
+recursive-include examples *.py *.yaml *.yml *.json *.md
+recursive-include experiments *.py *.yaml *.yml *.json *.md
+recursive-include paper *.py *.json *.md *.tex *.csv
+recursive-include constraints *.txt *.md
+recursive-include tools *.py
+recursive-include tests *.py *.json *.yaml *.yml
+# The lines below mirror the exclusions in tools/export_project.py, so that the
+# sdist holds exactly the exported files (tools/check_release.py compares them).
+# EXCLUDED_DIRECTORIES, at any depth:
+prune **/__pycache__
+prune **/outputs
+prune **/models
+prune **/checkpoints
+prune **/artifacts
+prune **/cache
+prune **/datasets
+prune **/research
+prune **/archive
+prune **/build
+prune **/dist
+prune **/tmp
+prune **/venv
+# Hidden files and directories below the top level:
+recursive-exclude * .*
+prune */**/.*
+global-exclude __pycache__ *.py[cod]

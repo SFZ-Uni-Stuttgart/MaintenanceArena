@@ -1,0 +1,51 @@
+{
+  "study": "Figure data of the article's synthetic figures",
+  "description": "Degradation-law curves, first orders on one life per source law, preparation-time policy maps, adaptation policy maps and failed training episodes. The policy maps average P(ORDER) of ten policies at every decision state of whole unmaintained lives and bin the states by health and damage rate.",
+  "seed_namespace": 261016,
+  "seed_entropy": ["namespace", "purpose", "law_index", "role"],
+  "curves": {
+    "description": "Five lives per law: the first five of each source law in pair order of a source bank, and the first five pairs of a bank of each new law. The marked point is the last safe order, end of life minus 13 steps.",
+    "mobilization_lead": 12,
+    "lives_per_law": 5,
+    "banks": [
+      {"laws": "source", "split": "final_evaluation", "seed": 26101100, "lives": 800},
+      {"laws": "paris_inspired", "split": "final_evaluation", "seed": 26101101, "lives": 800},
+      {"laws": "two_knee", "split": "final_evaluation", "seed": 26101102, "lives": 800},
+      {"laws": "gompertz", "split": "final_evaluation", "seed": 26101103, "lives": 800},
+      {"laws": "power_law", "split": "final_evaluation", "seed": 26101104, "lives": 800}
+    ]
+  },
+  "order_cases": {
+    "description": "On the 800 validation lives of source learning, the life of each source law whose end of life is closest to 128 steps (then the smallest pair index), with the first order of each of the ten source policies and of the Rule. The margin is the last safe order minus the order step.",
+    "outcomes": "outcomes_development_800.csv",
+    "end_of_life": 128,
+    "methods": ["PPO", "Rule"]
+  },
+  "preparation_maps": {
+    "description": "Mean P(ORDER) of the ten policies of each preparation time at their 307,200-step checkpoints, on the decision states of 512 lives per source law, in bins of 0.005 health and 0.0005 damage rate; states with a valid rate only. The 0.5 contour interpolates the mean at the distinct native coordinates.",
+    "banks": [
+      {"split": "development", "namespace": 261017, "purpose": 51, "lives": 128},
+      {"split": "development", "seed": 26101753, "lives": 1920}
+    ],
+    "lives_per_law": 512,
+    "preparation_times": [6, 12, 24],
+    "milestone": 307200,
+    "health": {"start": 0.2, "stop": 0.6, "width": 0.005},
+    "damage_rate": {"start": 0.0, "stop": 0.03, "width": 0.0005}
+  },
+  "adaptation_maps": {
+    "description": "Mean P(ORDER) of the ten source policies (204,800 steps) and of the ten fine-tuned policies (51,200 further steps) on the decision states at ages 1 to the end of life minus one of 512 further lives of each new law, in bins of 0.005 health and 0.0005 damage rate (the rate channel divided by 12), and the difference fine-tuned minus source.",
+    "laws": ["paris_inspired", "two_knee", "gompertz", "power_law"],
+    "bank": {"split": "development", "purpose": 81, "lives": 512},
+    "min_age": 1,
+    "fine_tuned_milestone": 51200,
+    "health": {"start": 0.2, "stop": 0.5, "width": 0.005},
+    "damage_rate": {"start": 0.0, "stop": 0.04, "width": 0.0005}
+  },
+  "training_failures": {
+    "description": "Failed / completed training episodes in percent, in bins of 6,400 source training steps (the three input sets) or 3,200 adaptation steps (fine-tuned and fresh runs on each new law).",
+    "input_sets": {"names": ["full", "deadline_only", "health_rate"], "budget": 204800, "width": 6400},
+    "adaptation": {"arms": ["fine-tuned", "fresh"], "budget": 51200, "width": 3200}
+  },
+  "contour": {"level": 0.5, "max_span_bins": 3.0}
+}

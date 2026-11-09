@@ -1,0 +1,60 @@
+{
+  "study": "Operating age under lifetime and degradation shift at L = 12",
+  "description": "PPO learns when to order on the four source laws without and with operating age as a fifth input, the age divided by 160 steps. An age run starts from the network of its seed with a zero age column. Test lives keep each damage path over relative age while the lifetime doubles or quadruples. With exact inputs, two further designs train on a wider lifetime distribution and the new laws are tested as well. With noisy inputs, health carries Gaussian error 0.005 and the rate comes from a line fit or from consecutive differences. A further test replays the noisy policies on twins whose noise is divided by the lifetime factor, so the noise per damage increment stays that of the source lives. The Time rule (stored as Rule) is fitted on 256 source lives of the same setting.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "seed_namespace": 261016,
+  "seed_entropy": ["namespace", "purpose", "law_index", "role"],
+  "roles": [26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610],
+  "laws": {"paris_inspired": "Paris-inspired", "two_knee": "Two-knee", "gompertz": "Gompertz", "power_law": "Power-law"},
+  "training": {
+    "steps": 204800,
+    "milestones": [51200, 102400, 204800],
+    "bank": {"split": "source_train", "purpose": 11, "pairs": 10781, "per_role": true}
+  },
+  "age_input": {"scale": 160, "clip": 4},
+  "lifetimes": {
+    "source": {"kind": "source"},
+    "doubled": {"kind": "scale", "factor": 2},
+    "quadrupled": {"kind": "scale", "factor": 4},
+    "wide": {"kind": "wide", "scale": 0.3}
+  },
+  "arms": {
+    "no_age": {"method": "PPO, no age", "age": false, "lifetime": "source"},
+    "age": {"method": "PPO, age", "age": true, "lifetime": "source"},
+    "age_wide": {"method": "PPO, age, wide training", "age": true, "lifetime": "wide"},
+    "no_age_wide": {"method": "PPO, no age, wide training", "age": false, "lifetime": "wide"}
+  },
+  "cells": {
+    "A": {"laws": "source", "lifetime": "source"},
+    "B": {"laws": "source", "lifetime": "doubled"},
+    "C": {"laws": "new", "lifetime": "source"},
+    "D": {"laws": "new", "lifetime": "doubled"},
+    "B4": {"laws": "source", "lifetime": "quadrupled"},
+    "Bs": {"laws": "source", "lifetime": "doubled", "noise_factor": 0.5},
+    "B4s": {"laws": "source", "lifetime": "quadrupled", "noise_factor": 0.25}
+  },
+  "source_test_bank": {"split": "development", "seed": 2026102322, "lives": 2000},
+  "new_law_test_bank": {"split": "development", "purpose": 41, "lives": 800},
+  "settings": {
+    "exact": {"sensor_level": "exact", "observation_route": "RAW_CAUSAL",
+              "arms": ["no_age", "age", "age_wide", "no_age_wide"], "cells": ["A", "B", "C", "D", "B4"],
+              "draw_groups": [["A", "B", "B4"], ["C", "D"]], "bootstrap_seed": 2026110601},
+    "filtered": {"sensor_level": "gaussian_005", "observation_route": "FILTERED_CAUSAL_EWLS8",
+                 "arms": ["no_age", "age"], "cells": ["A", "B", "B4"],
+                 "draw_groups": [["A", "B", "B4"]], "bootstrap_seed": 2026110611},
+    "raw": {"sensor_level": "gaussian_005", "observation_route": "RAW_CAUSAL",
+            "arms": ["no_age", "age"], "cells": ["A", "B", "B4"],
+            "draw_groups": [["A", "B", "B4"]], "bootstrap_seed": 2026110611}
+  },
+  "scaled_noise": {"cells": ["A", "B", "B4", "Bs", "B4s"], "draw_groups": [["A", "B", "B4", "Bs", "B4s"]],
+                   "bootstrap_seed": 2026110611},
+  "rule": {
+    "calibration_bank": {"split": "source_train", "purpose": 31, "lives": 256},
+    "grid": {
+      "health": [0.22, 0.25, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.45, 0.50, 0.60, 0.70],
+      "projection": [10, 12, 13, 14, 15, 16, 18, 20, 24, 28, 32, 40, 48]
+    },
+    "tie_anchors": {"health": 0.36, "projection": 15}
+  },
+  "bootstrap": {"replicates": 10000, "chunk": 250}
+}

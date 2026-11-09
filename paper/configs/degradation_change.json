@@ -1,0 +1,70 @@
+{
+  "description": "Table 4. Source procedures applied unchanged, and PPO fine-tuned, fine-tuned PPO with a calibrated ORDER threshold (Fine-tuned PPO + calibration), PPO trained afresh with the fine-tuning budget and with the full source budget, and Rule recalibrated on each of four new laws, on the same 800 test lives per law with exact observations. Each law has 256 separate calibration lives for the recalibrated Rule and the calibrated thresholds.",
+  "tables": ["Table 4"],
+  "outcomes": "outcomes/degradation_change.csv",
+  "preparation_steps": 12,
+  "observations": "exact",
+  "test_lives_per_law": 800,
+  "calibration_lives_per_law": 256,
+  "laws": {
+    "Paris-inspired": {
+      "recalibrated_rule_threshold": 20,
+      "test_seed": 3033974346,
+      "calibration_seed": 1683905899
+    },
+    "Two-knee": {
+      "recalibrated_rule_threshold": 16,
+      "test_seed": 1035897709,
+      "calibration_seed": 2768037144
+    },
+    "Gompertz": {
+      "recalibrated_rule_threshold": 13,
+      "test_seed": 1401055314,
+      "calibration_seed": 4159879460
+    },
+    "Power-law": {
+      "recalibrated_rule_threshold": 16,
+      "test_seed": 3537057932,
+      "calibration_seed": 1413115294
+    }
+  },
+  "training_seeds": [
+    26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610
+  ],
+  "runs": "run i of the outcome file belongs to training_seeds[i]: the source policy trained with this seed, its fine-tuned version, or the fresh policy of the same role",
+  "seed_derivation": "S(a, ...) is the first uint32 of numpy.random.SeedSequence([a, ...]). With d = 1, 2, 3, 4 for Paris-inspired, Two-knee, Gompertz and Power-law and r the training seed: training lives S(261016, 11, d, r), learner seed S(261016, 12, d, r) for fine-tuned and fresh PPO, calibration lives S(261016, 31, d, 0) and test lives S(261016, 41, d, 0). experiments/synthetic/adaptation.py derives the same seeds, and maintenance_arena.banks rebuilds the lives.",
+  "methods": {
+    "Source PPO": {
+      "policies": "the ten source policies, trained for 204,800 steps on the four source laws",
+      "order_when": "P(ORDER) > P(WAIT)"
+    },
+    "Source Rule": {"order_when": "T-hat <= 15", "fitted": "on 256 source calibration histories"},
+    "Fine-tuned PPO": {
+      "policies": "each source policy trained for 51,200 further steps on the new law",
+      "order_when": "P(ORDER) > P(WAIT)"
+    },
+    "Fine-tuned PPO, calibrated cut": {
+      "policies": "the Fine-tuned PPO policies",
+      "order_when": "P(ORDER) >= q",
+      "fitted": "one q per run on the 256 calibration lives of the law, with the highest calendar profit on the 123 values of the cut grid of source_comparison.json; ties go to fewer failures, then to the q closest to 0.5",
+      "q_by_law_and_run": {
+        "Paris-inspired": [0.27, 0.4, 0.48, 0.01, 0.14, 0.24, 0.002, 0.36, 0.03, 0.005],
+        "Two-knee": [0.001, 0.18, 0.11, 0.06, 0.03, 0.36, 0.1, 0.09, 0.005, 0.64],
+        "Gompertz": [0.32, 0.78, 0.82, 0.61, 0.62, 0.77, 0.38, 0.92, 0.49, 0.78],
+        "Power-law": [0.5, 0.83, 0.5, 0.97, 0.96, 0.46, 0.56, 0.5, 0.62, 0.52]
+      }
+    },
+    "Fresh PPO": {
+      "policies": "ten policies trained from scratch for 51,200 steps on the new law",
+      "order_when": "P(ORDER) > P(WAIT)"
+    },
+    "Fresh PPO, full budget": {
+      "policies": "the ten Fresh PPO runs continued to 204,800 steps on the new law, the budget of the source policies, with the same seeds and 10,781 training-life pairs instead of 2,697; after 51,200 steps they give exactly the Fresh PPO outcomes",
+      "order_when": "P(ORDER) > P(WAIT)"
+    },
+    "Recalibrated Rule": {
+      "order_when": "T-hat <= recalibrated_rule_threshold of the law",
+      "fitted": "26 health or projection thresholds on the 256 calibration lives of the law: health 0.22, 0.25, 0.28, 0.30 to 0.40 in steps of 0.02, 0.45, 0.50, 0.60 and 0.70, and T-hat 10, 12, 13, 14, 15, 16, 18, 20, 24, 28, 32, 40 and 48"
+    }
+  }
+}

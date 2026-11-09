@@ -1,0 +1,64 @@
+{
+  "description": "Table 2 and the additional tables of source controls and further calibrations. The ten source PPO policies, without further training, and conventional rules on the same 2,000 test lives with exact observations. Every threshold and cut of the further calibrations and the age and health cutoffs were fitted on 2,000 separate calibration lives before the test lives were evaluated; Rule keeps its source calibration on 256 histories, and the naive projection rule is not fitted.",
+  "tables": ["Table 2", "Additional table: source controls", "Additional table: further calibrations"],
+  "outcomes": "outcomes/source_comparison.csv",
+  "preparation_steps": 12,
+  "observations": "exact",
+  "laws": ["Linear", "Concave", "Convex", "Late-knee"],
+  "test_lives": {"count": 2000, "per_law": 500, "seed": 2026102322},
+  "calibration_lives": {"count": 2000, "per_law": 500, "seed": 2026102321},
+  "life_seeds": "Seeds of the life generator (NumPy PCG64 streams). maintenance_arena.banks rebuilds these lives, and the runners in experiments/synthetic use the same seeds.",
+  "policies": {
+    "description": "PPO policies trained for 204,800 steps on the four source laws; run i of the outcome file is the policy trained with seed training_seeds[i].",
+    "training_steps": 204800,
+    "training_seeds": [
+      26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610
+    ]
+  },
+  "projected_time_left": "T-hat = (1 - d) / max(delta, 1e-12) from damage d and its capped rate delta (Section 3.2); projection rules wait while no rate is available",
+  "methods": {
+    "Naive projection rule": {"order_when": "T-hat <= 13 (L + 1)", "fitted": false},
+    "PPO": {"order_when": "P(ORDER) > P(WAIT)"},
+    "Rule": {
+      "order_when": "T-hat <= 15",
+      "fitted": "26 health or projection thresholds on 256 source calibration histories"
+    },
+    "Age replacement": {"order_when": "operating age >= 86 steps", "candidates": "ages 0 to 160 steps"},
+    "Health threshold": {
+      "order_when": "health <= 0.3375",
+      "candidates": "161 health thresholds from 0.2 to 0.6 in steps of 0.0025"
+    },
+    "Reactive": {"order_when": "never; the component runs to failure"},
+    "PPO + calibrated cut": {
+      "order_when": "P(ORDER) >= q",
+      "q_by_run": [0.61, 0.8, 0.88, 0.59, 0.93, 0.9, 0.61, 0.68, 0.82, 0.94]
+    },
+    "Rule, recalibrated": {
+      "order_when": "T-hat <= 14.5",
+      "candidates": "802 single-indicator thresholds: the 161 health thresholds and 641 projection thresholds from 8 to 40 in steps of 0.05"
+    },
+    "Two-indicator rule": {
+      "order_when": "(health > 0.25 and T-hat <= 14.55) or (health <= 0.25 and T-hat <= 13.05)",
+      "split_s": 0.25,
+      "a": 14.55,
+      "b": 13.05,
+      "candidates": "236,876: the 802 single-indicator thresholds, s from 0.2 to 0.5 in steps of 0.025 with a and b from 10 to 20 in steps of 0.25, and s from 0.2 to 0.4 in steps of 0.01 with a and b from 12 to 17 in steps of 0.05"
+    },
+    "Per-law rule (privileged)": {
+      "order_when": "T-hat <= the threshold of the life's law",
+      "threshold_by_law": {"Linear": 13.95, "Concave": 13.05, "Convex": 14.5, "Late-knee": 14.0},
+      "privileged_information": "the degradation law of each life"
+    },
+    "PPO, failure-budget cut": {
+      "order_when": "P(ORDER) >= q",
+      "q_by_run": [0.67, 0.81, 0.9, 0.63, 0.94, 0.91, 0.69, 0.72, 0.9, 0.95]
+    },
+    "Rule, failure-budget cut": {"order_when": "T-hat <= 14.2"}
+  },
+  "calibration": {
+    "objective": "highest calendar profit (cash per elapsed step) with equal weight per law; ties within 1e-9 CU per step go to fewer failures, then to the single threshold closest to health 0.36 or T-hat 15, or to the cut closest to 0.5",
+    "failure_budget_objective": "least unused life with at most 1% failed calibration lives (equal weight per law)",
+    "cut_grid": "123 values of q: 1e-6, 2e-6, 5e-6, 1e-5, 2e-5, 5e-5, 1e-4, 2e-4, 5e-4, 0.001, 0.002 and 0.005, then 0.01 to 0.99 in steps of 0.01, then one minus the first twelve values",
+    "cut_per_run": "each of the ten policies receives its own cut"
+  }
+}

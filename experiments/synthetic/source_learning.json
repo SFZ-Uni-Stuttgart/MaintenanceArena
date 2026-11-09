@@ -1,0 +1,31 @@
+{
+  "study": "Source learning at L = 12",
+  "description": "Ten PPO runs learn when to order on the four source laws with preserved preparation. The final policies are compared with the naive projection rule, the calibrated Rule, age replacement, a health threshold, reactive operation and the last-safe reference on 800 validation lives and on the 2,000 test lives of Table 2.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "seed_namespace": 261016,
+  "seed_entropy": ["namespace", "purpose", "law_index", "role"],
+  "roles": [26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610],
+  "training": {
+    "steps": 204800,
+    "milestones": [51200, 102400, 204800],
+    "bank": {"split": "source_train", "purpose": 11, "pairs": 10781, "per_role": true}
+  },
+  "rule": {
+    "calibration_bank": {"split": "source_train", "purpose": 31, "lives": 256},
+    "grid": {
+      "health": [0.22, 0.25, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.45, 0.50, 0.60, 0.70],
+      "projection": [10, 12, 13, 14, 15, 16, 18, 20, 24, 28, 32, 40, 48]
+    },
+    "tie_anchors": {"health": 0.36, "projection": 15}
+  },
+  "development_bank": {"split": "development", "purpose": 41, "lives": 800},
+  "comparison": {
+    "calibration_bank": {"split": "development", "seed": 2026102321, "lives": 2000},
+    "test_bank": {"split": "development", "seed": 2026102322, "lives": 2000},
+    "naive_projection_threshold": 13,
+    "ages": [0, 160],
+    "health_grid": {"start": 0.2, "stop": 0.6, "step": 0.0025, "digits": 4}
+  },
+  "bootstrap": {"replicates": 10000, "seed": 2026102323},
+  "contrasts": [["PPO", "Rule"], ["PPO", "Naive projection rule"], ["PPO", "Health threshold"]]
+}

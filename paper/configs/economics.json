@@ -1,0 +1,24 @@
+{
+  "description": "Accounting shared by every study of the article (Section 3.1 and Appendix A). One step is one observation interval, a minute in the bearing replay. rebuild_tables.py implements it in consequences().",
+  "preparation_steps": 12,
+  "exchange_steps": 1,
+  "downtime_steps": 6,
+  "revenue_per_productive_step": 255.0,
+  "cost_per_nonproductive_step": 25.0,
+  "replacement_cost": 520.0,
+  "failure_surcharge": 7000.0,
+  "currency": "illustrative currency units (CU)",
+  "after_failure": "Production stops, completed preparation is kept, and the preparation still missing runs without production before the exchange and the downtime.",
+  "formulas": {
+    "last_safe_order": "T - L, where T is the last productive step and L the preparation steps",
+    "timely_order": "first order o with o <= T - L: productive steps U = o + L, nonproductive steps N = 7, failure F = 0",
+    "late_or_missing_order": "U = T and F = 1; N = 7 + L - (T - o) after a late order and N = 7 + L without an order",
+    "cash": "255 U - 520 - 25 N - 7000 F",
+    "calendar_steps": "U + N",
+    "unused_fraction": "(T - U) / (T - L), zero for a failed life"
+  },
+  "maintenance_arena_settings": {
+    "env_config": {"recovery_contract": "preserve_preparation_v1"},
+    "note": "The core task of the package fixes mobilization_lead 12, one exchange step, six downtime steps and these prices; its default recovery is immediate_exchange_v1, so the article's setting needs the override above (examples/preserved_preparation.yaml)."
+  }
+}

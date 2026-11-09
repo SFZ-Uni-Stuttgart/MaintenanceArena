@@ -1,0 +1,14 @@
+{\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.08}%
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & \shortstack{Failures\\(\%)} & \shortstack{Unused life\\(\%)} & \shortstack{Retained\\profit (\%)}\\
+\midrule
+PPO + calibration & 0.04 & 0.39 & 99.96\\
+Time rule, recalibrated & 0.05 & 0.87 & 99.92\\
+Two-indicator rule & 0 & 0.22 & 99.98\\
+\midrule
+Per-law rule (privileged) & 0.05 & $<0.01$ & 99.98\\
+PPO + calibration, failure budget & 0.94 & 0.31 & 99.73\\
+Time rule, failure budget & 1.20 & 0.71 & 99.62\\
+\bottomrule
+\end{tabular}}

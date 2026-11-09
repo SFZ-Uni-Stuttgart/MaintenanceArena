@@ -1,0 +1,81 @@
+# CPython 3.12 x86-64, base + rl + plots + bounded test/build dependencies.
+# Runtime pins were exercised in an isolated Windows CPython 3.12.9 environment
+# with torch 2.8.0+cpu. Original-source comparisons also used 2.8.0+cu128 on CPU.
+# Linux execution remains pending CI. These are exact dependency constraints;
+# they do not claim that Linux numerical parity has already been established.
+# Install torch from its official CPU index before installing from PyPI.
+# https://pytorch.org/get-started/previous-versions/#v280
+# https://download.pytorch.org/whl/cpu/torch/
+numpy==2.4.2
+gymnasium==1.2.3
+PyYAML==6.0.3
+torch==2.8.0+cpu
+stable-baselines3==2.8.0
+sb3-contrib==2.8.0
+matplotlib==3.10.6
+pandas==2.3.0
+cloudpickle==3.1.2
+typing_extensions==4.15.0
+Farama-Notifications==0.0.4
+filelock==3.25.2
+networkx==3.6.1
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+fsspec==2026.2.0
+sympy==1.14.0
+mpmath==1.3.0
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.59.2
+kiwisolver==1.4.9
+pillow==11.3.0
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0
+six==1.17.0
+pytz==2025.2
+tzdata==2025.2
+# The bearings extra. The article's forecasters were fitted with scikit-learn 1.8.0.
+scikit-learn==1.8.0
+scipy==1.15.3
+joblib==1.5.3
+threadpoolctl==3.6.0
+pytest==9.0.3
+iniconfig==2.3.0
+pluggy==1.6.0
+Pygments==2.19.2
+colorama==0.4.6
+packaging==25.0
+build==1.5.0
+pyproject-hooks==1.2.0
+# Build tooling is installed only in an isolated project environment. The
+# research environment's setuptools 70.2 predates the required license metadata.
+# These published versions satisfy pyproject.toml; build validation is separate.
+# https://pypi.org/project/setuptools/80.9.0/
+# https://pypi.org/project/wheel/0.45.1/
+setuptools==80.9.0
+wheel==0.45.1
+# pip 25.3 was checked in the separate clean build environment.
+pip==25.3
+# Offline distribution metadata/README checks, validated in the isolated Windows
+# runtime on 2026-09-09. Twine 6.2 preserves packaging==25.0; Twine 7 requires >=26.1.
+# https://pypi.org/project/twine/6.2.0/
+twine==6.2.0
+keyring==25.7.0
+readme_renderer==46.0
+docutils==0.23
+nh3==0.3.7
+requests==2.34.2
+charset-normalizer==3.5.1
+idna==3.19
+urllib3==2.7.0
+certifi==2026.7.22
+requests-toolbelt==1.0.0
+rfc3986==2.0.0
+rich==15.0.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+id==1.6.1
+jaraco.classes==3.4.0
+jaraco.context==6.1.2
+jaraco.functools==4.6.0
+more-itertools==11.1.0

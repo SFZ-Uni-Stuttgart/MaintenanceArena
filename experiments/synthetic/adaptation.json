@@ -1,0 +1,29 @@
+{
+  "study": "Adaptation to four new laws at L = 12",
+  "description": "The source policies and the source Rule are first applied unchanged to the four new laws. Then each source policy is fine-tuned for 51,200 further steps on a new law, and a fresh policy with the same budget is trained from scratch, while the Rule is recalibrated on 256 lives of that law. A second fresh policy with the same seed trains the full source budget of 204,800 steps. Each fine-tuned policy also gets an ORDER cut fitted on the 256 calibration lives of the Rule. Every method is replayed on the same 800 test lives per law.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "seed_namespace": 261016,
+  "seed_entropy": ["namespace", "purpose", "law_index", "role"],
+  "roles": [26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610],
+  "laws": {"paris_inspired": "Paris-inspired", "two_knee": "Two-knee", "gompertz": "Gompertz", "power_law": "Power-law"},
+  "learner_seed_purpose": 12,
+  "training": {
+    "steps": 51200,
+    "milestones": [12800, 51200],
+    "bank": {"split": "adaptation", "purpose": 11, "pairs": 2697, "per_role": true}
+  },
+  "full_budget": {"steps": 204800, "milestones": [12800, 51200, 102400, 204800], "pairs": 10781},
+  "rule": {
+    "calibration_bank": {"split": "adaptation", "purpose": 31, "lives": 256},
+    "grid": {
+      "health": [0.22, 0.25, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.45, 0.50, 0.60, 0.70],
+      "projection": [10, 12, 13, 14, 15, 16, 18, 20, 24, 28, 32, 40, 48]
+    },
+    "tie_anchors": {"health": 0.36, "projection": 15}
+  },
+  "test_bank": {"split": "development", "purpose": 41, "lives": 800},
+  "bootstrap": {"replicates": 10000, "seed": 261016},
+  "contrasts": [["Fine-tuned PPO", "Fresh PPO"], ["Fine-tuned PPO", "Source PPO"], ["Fine-tuned PPO", "Recalibrated Rule"],
+                ["Fine-tuned PPO", "Fresh PPO, full budget"], ["Fresh PPO, full budget", "Fresh PPO"],
+                ["Fine-tuned PPO, calibrated cut", "Recalibrated Rule"]]
+}

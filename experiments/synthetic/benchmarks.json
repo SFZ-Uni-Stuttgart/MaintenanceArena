@@ -1,0 +1,24 @@
+{
+  "study": "Further calibrations on the source lives at L = 12 (additional table; PPO + calibration in Section 4.1 and Appendix C)",
+  "description": "The final source policies receive a calibrated cut on their ORDER probability; the projection Rule is recalibrated on a denser grid of 802 thresholds; a two-indicator rule chooses among 236,876 candidates; a privileged per-law rule knows the law of each life; failure-budget variants minimize unused life with at most 1% failures. All are fitted on 2,000 calibration lives and replayed on the 2,000 test lives of Table 2.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "roles": [26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610],
+  "calibration_bank": {"laws": "source", "split": "development", "seed": 2026102321, "lives": 2000},
+  "test_bank": {"laws": "source", "split": "development", "seed": 2026102322, "lives": 2000},
+  "single_grid": {
+    "health": {"start": 0.2, "stop": 0.6, "step": 0.0025, "digits": 4},
+    "projection": {"start": 8.0, "stop": 40.0, "step": 0.05, "digits": 2}
+  },
+  "two_indicator_blocks": [
+    {"health_split": {"start": 0.2, "stop": 0.5, "step": 0.025, "digits": 3},
+     "a": {"start": 10.0, "stop": 20.0, "step": 0.25, "digits": 2},
+     "b": {"start": 10.0, "stop": 20.0, "step": 0.25, "digits": 2}},
+    {"health_split": {"start": 0.2, "stop": 0.4, "step": 0.01, "digits": 3},
+     "a": {"start": 12.0, "stop": 17.0, "step": 0.05, "digits": 2},
+     "b": {"start": 12.0, "stop": 17.0, "step": 0.05, "digits": 2}}
+  ],
+  "tie_anchors": {"health": 0.36, "projection": 15},
+  "failure_budget": 0.01,
+  "bootstrap": {"replicates": 10000, "seed": 2026102324},
+  "contrasts": [["PPO + calibrated cut", "Rule, recalibrated"], ["PPO + calibrated cut", "Two-indicator rule"]]
+}

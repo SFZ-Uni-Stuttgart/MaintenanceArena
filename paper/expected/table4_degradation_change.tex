@@ -1,0 +1,15 @@
+{\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.08}%
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & \shortstack{Failures\\(\%)} & \shortstack{Unused life\\(\%)} & \shortstack{Retained\\profit (\%)}\\
+\midrule
+Source PPO & 25.01 & 1.14 & 93.99\\
+Time rule: source & 22.31 & 1.21 & 94.52\\
+\midrule
+Fine-tuned PPO & 1.76 & 0.73 & 99.51\\
+Fine-tuned PPO + calibration & 0.21 & 0.86 & 99.89\\
+Fresh PPO & 21.94 & 0.84 & 93.70\\
+Fresh PPO, full budget & 1.86 & 0.79 & 99.49\\
+Time rule: adapted & 0.03 & 1.42 & 99.89\\
+\bottomrule
+\end{tabular}}

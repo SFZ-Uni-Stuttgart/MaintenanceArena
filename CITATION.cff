@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use MaintenanceArena, please cite the accompanying article given under preferred-citation."
+title: "MaintenanceArena"
+abstract: "Gymnasium environments and benchmarks for learning when to order maintenance under an intervention delay."
+type: software
+version: 1.0.0
+date-released: 2026-11-07
+license: MIT
+repository-code: "https://github.com/SFZ-Uni-Stuttgart/MaintenanceArena"
+authors:
+  - family-names: Mannone
+    given-names: Giuseppe
+    email: giuseppe.mannone@ima.uni-stuttgart.de
+    affiliation: "Institute of Machine Components (IMA), University of Stuttgart"
+  - family-names: Fischer
+    given-names: Paula
+    affiliation: "Institute of Machine Components (IMA), University of Stuttgart"
+  - family-names: Dazer
+    given-names: Martin
+    affiliation: "Institute of Machine Components (IMA), University of Stuttgart"
+keywords:
+  - maintenance timing
+  - reinforcement learning
+  - prognostics and health management
+  - intervention delay
+  - gymnasium
+preferred-citation:
+  type: article
+  title: "Learning When to Act: What Reinforcement Learning Agents Learn about Maintenance Timing and When It Transfers"
+  status: submitted
+  authors:
+    - family-names: Mannone
+      given-names: Giuseppe
+      affiliation: "Institute of Machine Components (IMA), University of Stuttgart"
+    - family-names: Fischer
+      given-names: Paula
+      affiliation: "Institute of Machine Components (IMA), University of Stuttgart"
+    - family-names: Dazer
+      given-names: Martin
+      affiliation: "Institute of Machine Components (IMA), University of Stuttgart"

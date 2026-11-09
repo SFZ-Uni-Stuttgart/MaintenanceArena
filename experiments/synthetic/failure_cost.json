@@ -1,0 +1,23 @@
+{
+  "study": "Failure cost of the source benchmark at L = 12",
+  "description": "The source policies of Table 2 are trained again with a failure cost of 3,500 or 14,000 CU instead of 7,000 CU, with the seeds and training lives of the source runs. Only the failure cost of the training environment changes. The Rule is calibrated per cost on the 256 source calibration lives. PPO and the Rule are replayed on the 2,000 test lives of Table 2 and priced with the cost of their arm. The cost of 7,000 CU is the source cohort of Table 2.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "seed_namespace": 261016,
+  "seed_entropy": ["namespace", "purpose", "law_index", "role"],
+  "roles": [26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610],
+  "failure_costs": [3500, 14000],
+  "training": {
+    "steps": 204800,
+    "milestones": [51200, 102400, 204800],
+    "bank": {"split": "source_train", "purpose": 11, "pairs": 10781, "per_role": true}
+  },
+  "rule": {
+    "calibration_bank": {"split": "source_train", "purpose": 31, "lives": 256},
+    "grid": {
+      "health": [0.22, 0.25, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.45, 0.50, 0.60, 0.70],
+      "projection": [10, 12, 13, 14, 15, 16, 18, 20, 24, 28, 32, 40, 48]
+    },
+    "tie_anchors": {"health": 0.36, "projection": 15}
+  },
+  "test_bank": {"split": "development", "seed": 2026102322, "lives": 2000}
+}

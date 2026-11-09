@@ -1,0 +1,39 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+outputs/
+*.pt
+*.pth
+*.pkl
+*.zip
+
+# Local environments
+venv/
+env/
+
+# Test, coverage and release-check reports
+release-check.json
+*test-results.xml
+.coverage
+htmlcov/
+
+# Tool caches and editor/OS files
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Packaging and array outputs
+*.egg
+*.npz
+*.npy
+
+# Inventory written into a source export ZIP; not part of the repository
+EXPORT_MANIFEST.json

@@ -1,0 +1,44 @@
+{
+  "description": "Table A2 and the additional learner table. Ten runs each of PPO, DQN and double DQN, trained on the four source laws with the same inputs, rewards and budget, and two projection rules, on the same 2,000 new lives with exact observations. These lives are not the test lives of Table 2. Every final policy is included, and nothing was fitted on these lives.",
+  "tables": ["Table A2", "Additional table: learner comparison"],
+  "outcomes": "outcomes/learner_comparison.csv",
+  "preparation_steps": 12,
+  "observations": "exact",
+  "laws": ["Linear", "Concave", "Convex", "Late-knee"],
+  "test_lives": {"count": 2000, "per_law": 500, "split": "final_evaluation", "seed": 3642636118},
+  "training": {
+    "calendar_steps": 204800,
+    "checkpoints": [51200, 102400, 204800],
+    "training_seeds": [
+      26102601, 26102602, 26102603, 26102604, 26102605, 26102606, 26102607, 26102608, 26102609, 26102610
+    ],
+    "training_lives": {
+      "split": "source_train",
+      "pairs": 10784,
+      "seeds": [1532560933, 626545904, 284937940, 3524093739, 4098563664, 3981306554, 1219655805, 3340257896, 83075000, 855851505]
+    },
+    "shared": "the three learners of run i train with training_seeds[i] on the same lives (training_lives.seeds[i]) and start with the same measurement seed"
+  },
+  "runs": "run i of the outcome file belongs to training_seeds[i]",
+  "seed_derivation": "S(a, ...) is the first uint32 of numpy.random.SeedSequence([a, ...]). With i the run index: training lives S(2610263503, 11, i), test lives S(2610263503, 41, 0). experiments/synthetic/learner_comparison.py derives the same seeds, and maintenance_arena.banks rebuilds the lives.",
+  "methods": {
+    "PPO": {
+      "recipe": "the core recipe paper-core-continuous-v1 (Table A1): two tanh layers of 64 units for actor and critic",
+      "parameters": 9155,
+      "order_when": "P(ORDER) > P(WAIT)"
+    },
+    "DQN": {
+      "recipe": "two ReLU layers of 64 units, replay of 100,000 decisions, 2,048 warm-up steps, one gradient step on 128 decisions every 4 calendar steps, target copy every 1,024 steps, epsilon from 1 to 0.03 over the first 102,400 steps, Huber loss, Adam with learning rate 3e-4, gradient norm at most 10",
+      "parameters": 4610,
+      "order_when": "Q(ORDER) > Q(WAIT)"
+    },
+    "Double DQN": {
+      "recipe": "the DQN recipe; the online network chooses the successor action of the target",
+      "parameters": 4610,
+      "order_when": "Q(ORDER) > Q(WAIT)"
+    },
+    "Naive projection rule": {"order_when": "T-hat <= 13 (L + 1)", "fitted": false},
+    "Rule": {"order_when": "T-hat <= 15", "fitted": "the threshold of Table 2, not refitted on these lives"}
+  },
+  "parameters": "trainable parameters: actor and critic for PPO, the online network for DQN and double DQN"
+}

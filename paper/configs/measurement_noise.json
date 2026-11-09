@@ -1,0 +1,44 @@
+{
+  "description": "Table 3. Three procedures with filtered inputs and calibrated thresholds on the same 2,000 source-law test lives, each observed with measurement noise (condition noisy) and without it (condition exact). The cuts and the Rule threshold were fitted on 256 separate noisy calibration lives, and the procedure was selected on 800 further validation lives.",
+  "tables": ["Table 3"],
+  "outcomes": "outcomes/measurement_noise.csv",
+  "preparation_steps": 12,
+  "noise": "independent Gaussian error with standard deviation 0.005 on health before clipping to [0, 1]",
+  "state_estimate": "causal line fit of damage over the latest eight observations with weights (7/9)^k for an observation k steps old; health, damage rate and deadline coordinate are recomputed from the fit",
+  "maintenance_arena_settings": {
+    "env_config": {"sensor_level": "gaussian_005", "observation_route": "FILTERED_CAUSAL_EWLS8"}
+  },
+  "laws": ["Linear", "Concave", "Convex", "Late-knee"],
+  "test_lives": {
+    "count": 2000,
+    "per_law": 500,
+    "seed": 4086758883,
+    "measurement_seed": 14622550388084748033
+  },
+  "calibration_lives": {"count": 256, "seed": 2257774815, "measurement_seed": 18308508056912486289},
+  "life_seeds": "Seeds of the life and measurement generators. maintenance_arena.banks rebuilds these lives with their measurement noise, and experiments/synthetic/measurement_noise.py derives the same seeds.",
+  "training_seeds": [
+    26101601, 26101602, 26101603, 26101604, 26101605, 26101606, 26101607, 26101608, 26101609, 26101610
+  ],
+  "runs": "run i of the outcome file is the policy of training role training_seeds[i] in both PPO procedures; the source policies were trained with these seeds",
+  "methods": {
+    "Source PPO": {
+      "policies": "the ten source policies, trained for 204,800 steps with exact observations",
+      "inputs": "line fit",
+      "order_when": "P(ORDER) >= q",
+      "q_by_run": [0.01, 0.26, 0.01, 0.01, 0.12, 0.16, 0.005, 0.03, 0.001, 0.03]
+    },
+    "Noise-trained PPO": {
+      "policies": "ten policies trained from scratch on noisy line-fit inputs for 819,200 steps, four times the source budget",
+      "inputs": "line fit",
+      "order_when": "P(ORDER) >= q",
+      "q_by_run": [0.0001, 0.07, 0.005, 0.03, 0.02, 0.001, 0.0001, 2e-06, 2e-06, 0.002]
+    },
+    "Recalibrated Rule": {
+      "inputs": "line fit",
+      "order_when": "T-hat <= 18",
+      "fitted": "42 health and projection thresholds on the 256 noisy calibration lives"
+    }
+  },
+  "calibration": "Each cut, one per policy from the 123-value grid of source_comparison.json, and the Rule threshold maximize calendar profit with equal weight per law on the noisy calibration lives; ties within 1e-9 CU per step go to fewer failed lives, then to the cut closest to 0.5 or the threshold closest to health 0.36 or T-hat 15."
+}

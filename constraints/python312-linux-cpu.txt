@@ -1,0 +1,12 @@
+# CPython 3.12 / Linux x86-64 / torch 2.8.0 CPU-only wheel.
+# Linux execution is pending the first successful Linux CI run. Availability
+# of the official manylinux_2_28 wheel does not establish numerical parity.
+-c python312-common.txt
+# Linux-only transitive dependencies of Twine/keyring. Published CPython 3.12
+# compatible releases selected from PyPI; actual Linux installation is pending CI.
+# Metadata checking does not access a keyring or need a D-Bus session.
+SecretStorage==3.5.0
+jeepney==0.9.0
+cryptography==50.0.1
+cffi==2.1.1
+pycparser==3.0

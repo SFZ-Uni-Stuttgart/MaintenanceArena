@@ -1,0 +1,16 @@
+{\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.08}%
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & \shortstack{Failures\\(\%)} & \shortstack{Unused life\\(\%)} & \shortstack{Retained\\profit (\%)}\\
+\midrule
+Time rule, $\tau=13$ & 63.95 & 0 & 85.21\\
+PPO & 0 & 1.04 & 99.93\\
+Time rule, $\tau=15$ & 0 & 1.16 & 99.92\\
+\midrule
+Age replacement & 0.75 & 24.08 & 97.70\\
+Health threshold & 0.75 & 20.04 & 97.85\\
+Reactive & 100 & 0 & 70.32\\
+\midrule
+Last-safe reference & 0 & 0 & 100\\
+\bottomrule
+\end{tabular}}

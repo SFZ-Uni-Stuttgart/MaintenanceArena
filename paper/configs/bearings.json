@@ -1,0 +1,154 @@
+{
+  "description": "Table 5 and the additional bearing table. Replayed bearing histories: each FEMTO bearing is evaluated by models, classifiers and rules fitted without its outer fold, and the XJTU-SY bearings by models, classifiers and rules fitted on all FEMTO bearings and applied unchanged. One step is one minute, and the recorded test end is the last productive minute.",
+  "tables": ["Table 5", "Additional table: bearing comparison"],
+  "outcomes": "outcomes/bearings.csv",
+  "preparation_minutes": 12,
+  "datasets": {
+    "FEMTO": {"bearings": 17, "role": "held out by outer fold"},
+    "XJTU-SY": {"bearings": 15, "role": "transfer without refitting"}
+  },
+  "folds": {
+    "derivation": "Sort the bearings by the SHA-256 hex digest of 'bearings_when_to_act_v1|bearing_folds|<dataset>|<bearing>' and assign the sorted rank modulo 5. The dataset string is 'femto' for the outer folds, 'femto|inner|outer<f>' for the inner folds of outer fold f and 'femto|inner|transfer' for the fit on all FEMTO bearings.",
+    "outer": {
+      "0": ["Bearing1_7", "Bearing2_1", "Bearing2_5", "Bearing3_1"],
+      "1": ["Bearing1_5", "Bearing1_6", "Bearing2_3", "Bearing3_2"],
+      "2": ["Bearing2_2", "Bearing2_4", "Bearing3_3"],
+      "3": ["Bearing1_3", "Bearing1_4", "Bearing2_7"],
+      "4": ["Bearing1_1", "Bearing1_2", "Bearing2_6"]
+    },
+    "inner": {
+      "outer fold 0": {
+        "0": ["Bearing1_2", "Bearing2_3", "Bearing2_6"],
+        "1": ["Bearing1_1", "Bearing1_6", "Bearing2_7"],
+        "2": ["Bearing2_2", "Bearing2_4", "Bearing3_2"],
+        "3": ["Bearing1_3", "Bearing1_4"],
+        "4": ["Bearing1_5", "Bearing3_3"]
+      },
+      "outer fold 1": {
+        "0": ["Bearing2_1", "Bearing2_2", "Bearing2_5"],
+        "1": ["Bearing1_7", "Bearing2_4", "Bearing2_6"],
+        "2": ["Bearing1_1", "Bearing1_4", "Bearing3_1"],
+        "3": ["Bearing1_3", "Bearing3_3"],
+        "4": ["Bearing1_2", "Bearing2_7"]
+      },
+      "outer fold 2": {
+        "0": ["Bearing1_6", "Bearing1_7", "Bearing2_7"],
+        "1": ["Bearing1_3", "Bearing2_5", "Bearing3_2"],
+        "2": ["Bearing1_2", "Bearing2_1", "Bearing2_3"],
+        "3": ["Bearing1_1", "Bearing1_5", "Bearing2_6"],
+        "4": ["Bearing1_4", "Bearing3_1"]
+      },
+      "outer fold 3": {
+        "0": ["Bearing1_2", "Bearing1_5", "Bearing2_2"],
+        "1": ["Bearing1_1", "Bearing2_6", "Bearing3_3"],
+        "2": ["Bearing1_7", "Bearing2_5", "Bearing3_1"],
+        "3": ["Bearing2_1", "Bearing2_3", "Bearing3_2"],
+        "4": ["Bearing1_6", "Bearing2_4"]
+      },
+      "outer fold 4": {
+        "0": ["Bearing1_3", "Bearing2_1", "Bearing2_7"],
+        "1": ["Bearing1_4", "Bearing1_5", "Bearing2_2"],
+        "2": ["Bearing2_3", "Bearing3_1", "Bearing3_2"],
+        "3": ["Bearing1_7", "Bearing2_5", "Bearing3_3"],
+        "4": ["Bearing1_6", "Bearing2_4"]
+      },
+      "all FEMTO bearings": {
+        "0": ["Bearing1_2", "Bearing1_4", "Bearing1_6", "Bearing3_3"],
+        "1": ["Bearing1_3", "Bearing2_1", "Bearing2_5", "Bearing3_1"],
+        "2": ["Bearing2_2", "Bearing2_6", "Bearing2_7"],
+        "3": ["Bearing1_5", "Bearing1_7", "Bearing2_3"],
+        "4": ["Bearing1_1", "Bearing2_4", "Bearing3_2"]
+      }
+    },
+    "use": "Within the training set of each outer fold, the inner folds supply out-of-fold forecasts for PPO training and rule calibration; the last inner split serves the fit on all FEMTO bearings for the transfer."
+  },
+  "ppo": {
+    "training_steps": 409600,
+    "runs": 5,
+    "femto_training_seed": "2026101600 + 100 * fold + run",
+    "xjtu_sy_training_seed": "2026101800 + run",
+    "order_when": "P(ORDER) > P(WAIT)"
+  },
+  "forecast_rule_fitting": {
+    "order_when": "the design's forecast of the remaining minutes <= theta, read from its forecast input clip(forecast / 125, 0, 1.2) <= theta / 125 in float32",
+    "theta_grid_minutes": "0 to 90 in steps of 0.5",
+    "fitted": "highest pooled calendar profit on the training bearings of the outer fold (FEMTO) or on all FEMTO bearings (XJTU-SY); exact ties keep the smallest theta"
+  },
+  "methods": {
+    "PPO: Full": {"forecaster_age": true, "policy_age": true},
+    "PPO: No policy age": {"forecaster_age": true, "policy_age": false},
+    "PPO: No forecaster age": {"forecaster_age": false, "policy_age": true},
+    "PPO: No age": {"forecaster_age": false, "policy_age": false},
+    "Risk classifier: Full": {
+      "inputs": "the seven policy inputs of PPO: Full on the same training and evaluation bearings",
+      "model": "scikit-learn HistGradientBoostingClassifier(learning_rate=0.05, max_iter=300, max_leaf_nodes=15, min_samples_leaf=20, l2_regularization=1.0, early_stopping=False, random_state=0)",
+      "labels": "1 for every minute at or after the last safe order T - 12, else 0, with weight 1/T per minute so that every training bearing has equal weight",
+      "order_when": "first minute whose score is at least theta",
+      "fitted": "theta from 0.01 to 0.99 in steps of 0.01 with the highest pooled calendar profit on leave-one-bearing-out scores of the training bearings, the smallest theta in a tie; the classifier is then refitted on all training bearings, taken in the order of their names",
+      "femto_theta_by_fold": {"0": 0.11, "1": 0.26, "2": 0.43, "3": 0.14, "4": 0.1},
+      "xjtu_sy_theta": 0.32
+    },
+    "Risk classifier: No age": {
+      "inputs": "the six policy inputs of PPO: No age on the same training and evaluation bearings",
+      "model": "as Risk classifier: Full",
+      "labels": "as Risk classifier: Full",
+      "order_when": "first minute whose score is at least theta",
+      "fitted": "as Risk classifier: Full",
+      "femto_theta_by_fold": {"0": 0.23, "1": 0.24, "2": 0.18, "3": 0.42, "4": 0.31},
+      "xjtu_sy_theta": 0.38
+    },
+    "Forecast rule: Full": {
+      "forecast": "the forecaster of PPO: Full",
+      "femto_theta_minutes_by_fold": {"0": 24.5, "1": 59.0, "2": 20.0, "3": 48.0, "4": 72.5},
+      "xjtu_sy_theta_minutes": 33.0
+    },
+    "Forecast rule: No age": {
+      "forecast": "the forecaster of PPO: No age",
+      "femto_theta_minutes_by_fold": {"0": 62.0, "1": 69.0, "2": 87.0, "3": 55.0, "4": 64.5},
+      "xjtu_sy_theta_minutes": 40.5
+    },
+    "Indicator Rule": {
+      "families": "age, RMS level, peak level, forecast, and forecast plus trend. A level is the larger of the two channels' logarithms of RMS or peak over the bearing's own running-in median, exponentially smoothed with weight k on the newest minute. The trend is the least-squares slope of the forecast over the latest ten minutes. The rule orders at the first minute that meets its condition.",
+      "fitted": "highest pooled calendar profit on the training bearings (the outer training set for FEMTO, all FEMTO bearings for XJTU-SY)",
+      "femto_by_fold": {
+        "0": {
+          "family": "peak level",
+          "smoothing": 0.1,
+          "threshold": 0.65,
+          "order_when": "smoothed log-relative peak level >= 0.65"
+        },
+        "1": {
+          "family": "forecast plus trend",
+          "k": 5.0,
+          "threshold_minutes": 49.0,
+          "order_when": "forecast + 5 x forecast trend <= 49 minutes"
+        },
+        "2": {
+          "family": "peak level",
+          "smoothing": 1.0,
+          "threshold": 1.8,
+          "order_when": "smoothed log-relative peak level >= 1.8"
+        },
+        "3": {
+          "family": "peak level",
+          "smoothing": 0.1,
+          "threshold": 0.65,
+          "order_when": "smoothed log-relative peak level >= 0.65"
+        },
+        "4": {
+          "family": "peak level",
+          "smoothing": 0.1,
+          "threshold": 0.65,
+          "order_when": "smoothed log-relative peak level >= 0.65"
+        }
+      },
+      "xjtu_sy": {
+        "family": "peak level",
+        "smoothing": 0.1,
+        "threshold": 0.65,
+        "order_when": "smoothed log-relative peak level >= 0.65"
+      }
+    },
+    "Reactive": {"order_when": "never; every bearing runs to its recorded end"}
+  }
+}

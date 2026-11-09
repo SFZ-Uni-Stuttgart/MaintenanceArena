@@ -1,0 +1,9 @@
+# Store and check out text files with LF line endings, whatever core.autocrlf says.
+* text=auto eol=lf
+
+# These three files keep their recorded CRLF bytes in every checkout. Their SHA-256
+# values belong to the recorded task and implementation identity and are pinned in
+# tests/test_identity_freeze.py. Never let Git convert their line endings.
+/src/maintenance_arena/data/profiles.json -text
+/src/maintenance_arena/gearbox_filter.py -text
+/src/maintenance_arena/gearbox_model.py -text

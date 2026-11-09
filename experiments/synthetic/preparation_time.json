@@ -1,0 +1,24 @@
+{
+  "study": "Preparation time L = 6, 12 and 24",
+  "description": "Ten runs per preparation time, trained for a known L with the same initial weights and training lives across L, first to 204,800 steps and then, by exact continuation, to 307,200 steps. The deadline coordinate and the Rule are recomputed for each L. The final policies are replayed on 800 test lives, next to the Rule calibrated per L on 256 separate lives.",
+  "environment": {"recovery_contract": "preserve_preparation_v1"},
+  "seed_namespace": 261017,
+  "seed_entropy": ["namespace", "purpose", "role"],
+  "roles": [26101701, 26101702, 26101703, 26101704, 26101705, 26101706, 26101707, 26101708, 26101709, 26101710],
+  "preparation_times": [6, 12, 24],
+  "training": {
+    "steps": 307200,
+    "milestones": [51200, 102400, 204800, 307200],
+    "continuation_from": 204800,
+    "bank": {"split": "source_train", "purpose": 11, "pairs": 15756, "per_role": true}
+  },
+  "rule": {
+    "calibration_bank": {"split": "development", "namespace": 181026, "purpose": 31, "lives": 256},
+    "health_grid": [0.22, 0.25, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.45, 0.50, 0.60, 0.70],
+    "projection_offsets": [-2, 0, 1, 2, 3, 4, 6, 8, 12, 16, 20, 28, 36],
+    "tie_anchors": {"health": 0.36, "projection_offset": 3}
+  },
+  "test_bank": {"split": "development", "namespace": 181026, "purpose": 51, "lives": 800},
+  "bootstrap": {"replicates": 10000, "seed": 261017},
+  "contrasts": [["PPO", "Rule"]]
+}

@@ -1,0 +1,12 @@
+{\small\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.08}%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{Noisy inputs} & \multicolumn{2}{c}{Exact inputs}\\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+Procedure & Failures & Unused life & Failures & Unused life\\
+\midrule
+\shortstack[l]{Source PPO\\+ filter + calibration} & 0.77 & 6.50 & 0 & 2.69\\
+Noise-trained PPO & 0.32 & 7.10 & 0 & 2.89\\
+Time rule & 0.15 & 7.74 & 0 & 3.80\\
+\bottomrule
+\end{tabular}}

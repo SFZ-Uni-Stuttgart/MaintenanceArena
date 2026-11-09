@@ -1,0 +1,6 @@
+# Core recovery setting of the accompanying article: a failure stops production, completed
+# preparation is kept, and the remaining preparation runs without production before the
+# exchange and the six downtime steps. Use it with a core profile, for example
+#   python -m maintenance_arena evaluate --profile paper-core-continuous-v1 --config examples/preserved_preparation.yaml --policy reactive projection --seed 12100 --episodes 32 --output outputs/core-preserved
+env_config:
+  recovery_contract: preserve_preparation_v1

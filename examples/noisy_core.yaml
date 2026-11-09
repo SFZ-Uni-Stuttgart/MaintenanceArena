@@ -1,0 +1,4 @@
+# Simulated observation study; this is a different configuration from exact-input evaluation.
+env_config:
+  observation_route: ROBUST_MULTISCALE_234
+  sensor_level: light

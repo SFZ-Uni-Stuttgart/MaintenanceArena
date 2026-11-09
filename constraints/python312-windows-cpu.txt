@@ -1,0 +1,6 @@
+# CPython 3.12 / Windows x86-64 / torch 2.8.0 CPU-only wheel.
+# Validated locally in an isolated CPython 3.12.9 environment outside the research
+# checkout, including the portable suite and CPU-only Torch wheel.
+-c python312-common.txt
+# Twine's Windows keyring dependency; metadata checking does not access a keyring.
+pywin32-ctypes==0.2.3
